@@ -1,0 +1,13 @@
+.home-container {
+    background-color: #EA5455;
+    min-height: 100vh;
+}
+
+.navbar-dark {
+    background-color: #332C39;
+}
+
+.main-image {
+    height: 80%;
+    width: 100%;
+}
