@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,900;1,900&display=swap');
+
+.index-text {
+    font-family: 'Schibsted Grotesk', sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 95px;
+    letter-spacing: 3px;
+    text-align: center;
+    padding-top: 10%;
+    color: #332C39;
+}
+
 .home-container {
     background-color: #EA5455;
     min-height: 100vh;
@@ -8,6 +21,20 @@
 }
 
 .main-image {
-    height: 80%;
+    padding-top: 5px;
+    height: 90%;
     width: 100%;
+    border-radius: 3%;
+}
+
+footer {
+    background-color: #332C39;
+}
+
+/* media*/
+
+@media screen and (max-width: 400px) {
+    .index-text {
+        font-size: 45px;
+    }
 }
