@@ -20,24 +20,24 @@
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="product-wrapper mb-45 text-center">
                        <div class="product-img-container">
-                          <a href="#" data-abc="true">
+                          <a href="{% url 'product_detail' album.id %}" data-abc="true">
                             <img src="{{ album.image.url }}" alt="{{ album.name }}" class="products-image">
                           </a>
                             <span class="text-center"><i class="fa-solid fa-euro-sign"></i> {{ album.price }}</span>
                           <div class="product-action">
                              <div class="product-action-style">
-                                <a href="#"> <i class="fa fa-plus"></i></a>
+                                <a href="{% url 'product_detail' album.id %}"> <i class="fa fa-plus"></i></a>
                                 {% if album.rating %}
-                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ album.rating }} / 5</small>
+                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ album.rating }} / 5</small>
                                 {% else %}
-                                <small class="text-muted">No Rating</small>
+                                    <small class="text-muted">No Rating</small>
                                 {% endif %}
                                 <a href="#"> <i class="fa-brands fa-opencart"></i> </a>
                             </div>
                           </div>
                        </div>
                        <div>
-                        <h5 class="text-white bold mt-1">{{ album.name }}</h5>
+                        <a href="{% url 'product_detail' album.id %}"><h5 class="text-white bold mt-1">{{ album.name }}</h5></a>
                        </div>
                     </div>
                  </div>

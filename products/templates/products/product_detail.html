@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid products-container">
+    <div class="row pt-5">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <a href="#" data-abc="true" target="_blank">
+                <img src="{{ album.image.url }}" alt="{{ album.name }}" class="products-image">
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <h3>{{ album.name }}</h3>
+            {% if album.rating %}
+                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ album.rating }} / 5</small>
+            {% else %}
+                <small class="text-muted">No Rating</small>
+            {% endif %}
+            <h5 class="text-muted"><i class="fa-solid fa-euro-sign"></i> {{ album.price }}</h5>
+            <p>{{ album.description }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
