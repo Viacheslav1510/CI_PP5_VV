@@ -4,27 +4,87 @@
     font-family: 'Schibsted Grotesk', sans-serif;
     font-weight: 900;
     font-style: italic;
-    font-size: 95px;
+    font-size: 70px;
     letter-spacing: 3px;
-    text-align: center;
-    padding-top: 10%;
+    text-align: left;
+    padding: 5%;
     color: #332C39;
+}
+
+.main-divider {
+    height: 10px;
+    width: 30%;
+    background-color: #DAB88B;
+    border-radius: 5px;
 }
 
 .home-container {
     background-color: #EA5455;
-    min-height: 100vh;
 }
 
 .navbar-dark {
     background-color: #332C39;
 }
 
+.line-one {
+    content: "";
+    position: absolute;
+    top: 100;
+    right: 113%;
+    height: 100%;
+    width: 6vh;
+    background: #470D21;
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    transform: skew(-15deg);
+    z-index: 100;
+}
+
+.line-two {
+    content: "";
+    position: absolute;
+    top: 100;
+    right: 107%;
+    height: 100%;
+    width: 6vh;
+    background: #9C0F48;
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    transform: skew(-15deg);
+    z-index: 100;
+}
+
+.line-three {
+    content: "";
+    position: absolute;
+    top: 100;
+    right: 101%;
+    height: 100%;
+    width: 6vh;
+    background: #D67D3E;
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    transform: skew(-15deg);
+    z-index: 100;
+}
+
+.line-four {
+    content: "";
+    position: absolute;
+    top: 100;
+    right: 95%;
+    height: 100%;
+    width: 6vh;
+    background: #F9E4D4;
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    transform: skew(-15deg);
+    z-index: 100;
+}
+
 .main-image {
-    padding-top: 5px;
-    height: 90%;
+    height: 100%;
     width: 100%;
-    border-radius: 3%;
 }
 
 footer {

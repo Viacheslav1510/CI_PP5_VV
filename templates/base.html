@@ -76,8 +76,7 @@
             <div class="row ml-auto">
               <form method="GET" action="#">
                 <div class="input-group w-80">
-                  <input class="form-control border rounded" type="text" name="q"
-                    aria-label="Search">
+                  <input class="form-control border rounded" type="text" name="q" aria-label="Search" placeholder="Search our site">
                   <div class="input-group-append">
                     <button class="form-control btn border btn-outline-light rounded ml-2" type="submit">
                       Search
@@ -87,7 +86,7 @@
               </form>
             </div>
           </div>
-          <ul class="navbar-nav mr-auto mr-lg-2 ms-lg-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav mr-auto mr-lg-1 ml-lg-1 ms-lg-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
               <div class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
                 {% if request.user.is_authenticated %}
@@ -112,7 +111,7 @@
             </li>
           </ul>
           <!-- Basket -->
-          <ul class="navbar-nav me-auto ml-lg-1 ms-lg-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto ml-lg-3 mr-lg-3 ms-lg-auto mb-2 mb-lg-0">
             <li class="list-inline-item">
               <a class="{% if grand_total %}text-white font-weight-bold{% else %}text-danger{% endif %} text-center nav-link" href="#">
                 <div>
