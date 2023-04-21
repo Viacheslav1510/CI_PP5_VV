@@ -47,3 +47,23 @@ class Album(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Track(models.Model):
+    album = models.ForeignKey(
+        Album,
+        on_delete=models.CASCADE,
+        related_name='tracks'
+        )
+    name = models.CharField(max_length=100)
+    track_number = models.PositiveIntegerField()
+    length = models.DecimalField(
+        max_digits=3,
+        decimal_places=2,
+        null=True,
+        blank=True
+        )
+    artist = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'Album: {self.album}, Track: {self.name}'

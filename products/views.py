@@ -12,7 +12,9 @@ def all_products(request):
 
 def product_detail(request, product_id):
     album = get_object_or_404(Album, pk=product_id)
+    tracks = album.tracks.all()
     context = {
         'album': album,
+        'tracks': tracks,
     }
     return render(request, 'products/product_detail.html', context)

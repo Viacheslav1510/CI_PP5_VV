@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid products-container">
+<div class="container-fluid products-detail-container pb-5">
     <div class="row pt-5">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <a href="#" data-abc="true" target="_blank">
@@ -22,7 +22,13 @@
                 <small class="text-muted">No Rating</small>
             {% endif %}
             <h5 class="text-muted"><i class="fa-solid fa-euro-sign"></i> {{ album.price }}</h5>
-            {{ album.description }}
+            <h5>Tracks:</h5>
+            <ul class="list-unstyled">
+                {% for track in tracks %}
+                 <li>{{track.track_number }}. {{ track.name }} ({{ track.length }})</li>
+                {% endfor %}
+            </ul>
+
         </div>
     </div>
 </div>

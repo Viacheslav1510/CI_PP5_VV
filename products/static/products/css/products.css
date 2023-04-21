@@ -1,6 +1,11 @@
+/* containers */
 .products-container {
     min-height: 90vh;
     background-color: crimson;
+}
+
+.products-detail-container {
+    background-color: #F3E99F;
 }
 
 .products-image {
