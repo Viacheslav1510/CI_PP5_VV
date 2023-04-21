@@ -16,12 +16,13 @@
 
         <div class="col-12 col-md-6 col-lg-4">
             <h3>{{ album.name }}</h3>
+            <p>{{ album.genre.friendly_name }}</p>
             {% if album.rating %}
                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ album.rating }} / 5</small>
             {% else %}
                 <small class="text-muted">No Rating</small>
             {% endif %}
-            <h5 class="text-muted"><i class="fa-solid fa-euro-sign"></i> {{ album.price }}</h5>
+            <h5 class="text-muted mt-1">€ {{ album.price }}</h5>
             <h5>Tracks:</h5>
             <ul class="list-unstyled">
                 {% for track in tracks %}
