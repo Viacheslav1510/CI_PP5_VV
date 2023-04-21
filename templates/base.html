@@ -55,12 +55,12 @@
                 Shop
               </a>
               <div class="dropdown-menu">
-                <!-- {% for category in categories_list %} -->
+                {% for genre in genres_list %}
                 <a class="dropdown-item text-muted p-2"
-                  href="#">Category</a>
-                <!-- {% endfor %} -->
+                  href="{% url 'products' %}?genre={{genre.name}}">{{ genre.friendly_name }}</a>
+                {% endfor %}
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-muted" href="{% url 'products' %}">All Products</a>
+                <a class="dropdown-item text-muted" href="{% url 'products' %}">All Albums</a>
               </div>
               <!-- Blog -->
             <li class="nav-item">
