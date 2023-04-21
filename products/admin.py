@@ -1,8 +1,9 @@
 from django.contrib import admin
 from .models import Album, Genre
+from django_summernote.admin import SummernoteModelAdmin
 
 
-class AlbumAdmin(admin.ModelAdmin):
+class AlbumAdmin(SummernoteModelAdmin):
     list_display = (
         'genre',
         'name',
@@ -10,7 +11,7 @@ class AlbumAdmin(admin.ModelAdmin):
         'price',
         'rating',
     )
-
+    summernote_fields = ('description')
     ordering = ('genre', 'name')
 
 
