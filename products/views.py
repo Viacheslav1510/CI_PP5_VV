@@ -8,7 +8,6 @@ from .models import Album, Genre
 
 def all_products(request):
     albums = Album.objects.all()
-    genres_list = Genre.objects.all()
     query = None
     genre = None
     sort = None
@@ -50,19 +49,16 @@ def all_products(request):
     context = {
         'albums': albums,
         'search_term': query,
-        'genres_list': genres_list,
         'current_sort': current_sort
     }
     return render(request, 'products/products.html', context)
 
 
 def product_detail(request, product_id):
-    genres_list = Genre.objects.all()
     album = get_object_or_404(Album, pk=product_id)
     tracks = album.tracks.all()
     context = {
         'album': album,
         'tracks': tracks,
-        'genres_list': genres_list,
     }
     return render(request, 'products/product_detail.html', context)
