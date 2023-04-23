@@ -110,10 +110,10 @@
               </div>
             </li>
           </ul>
-          <!-- Basket -->
+          <!-- Bag -->
           <ul class="navbar-nav me-auto ml-lg-3 mr-lg-3 ms-lg-auto mb-2 mb-lg-0">
             <li class="list-inline-item">
-              <a class="{% if grand_total %}text-white font-weight-bold{% else %}text-danger{% endif %} text-center nav-link" href="#">
+              <a class="{% if grand_total %}text-white font-weight-bold{% else %}text-danger{% endif %} text-center nav-link" href="{% url 'bag' %}">
                 <div>
                   <div><i class="fa-brands fa-opencart fa-lg text-white {% if grand_total %}text-danger{% endif %}" aria-hidden="true"></i></div>
                   <p class="my-0">
