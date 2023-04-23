@@ -23,6 +23,30 @@
                 <small class="text-muted">No Rating</small>
             {% endif %}
             <h5 class="text-muted mt-1">€ {{ album.price }}</h5>
+            <form class="form" action="{% url 'add_to_bag' album.id %}" method="POST">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-12">
+                        <p class="mt-3"><strong>Quantity:</strong></p>
+                        <div class="form-group w-50">
+                            <div class="input-group">
+                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="5" data-item_id="{{ album.id }}" id="id_qty_{{ album.id }}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-0 mt-5">
+                            <span class="icon">
+                                <i class="fa-regular fa-circle-left"></i>
+                            </span>
+                            <span class="text-uppercase">Keep Shopping</span>
+                        </a>
+                        <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </div>
+            </form>
             <h5>Tracks:</h5>
             <ul class="list-unstyled">
                 {% for track in tracks %}
