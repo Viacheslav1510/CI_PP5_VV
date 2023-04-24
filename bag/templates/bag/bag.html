@@ -1,31 +1,84 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'bag/css/bag.css' %}">
+{% endblock %}
 
 {% block content %}
-<div class="container mb-2">
-    <div id="delivery-banner" class="row text-center">
-        <div class="col bg-black text-white">
-            <h4 class="logo-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4">Shopping Bag</h2>
-            <hr>
-        </div>
-    </div>
+<div class="container-fluid my-3">
 
     <div class="row">
         <div class="col">
             {% if bag_items %}
-                <div class="table-responsive rounded">
-                    {{ bag_items }}
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-8 cart">
+                        <div class="title">
+                            <div class="row pr-2">
+                                <div class="col"><h4><b>Shopping Cart</b></h4></div>
+                                <div class="col align-self-center text-right text-muted">{{ product_count }} items</div>
+                            </div>
+                        </div>
+                        {% for item in bag_items %}
+                        <div class="row border-top border-bottom">
+                            <div class="row align-items-center bag-item-row">
+                                <div class="col-3"><img class="img-fluid" src="{{ item.album.image.url }}"></div>
+                                <div class="col-3">
+                                    <div class="row text-muted">{{ item.album.name }}</div>
+                                    <div class="row">{{ item.album.genre.friendly_name }}</div>
+                                </div>
+                                <div class="col-3">
+                                    <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
+                                </div>
+                                <div class="col-3">
+                                    <div>
+                                        &euro; {{ item.album.price }}
+                                    </div>
+                                    <div>
+                                        &#10005;
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class="back-to-shop">
+                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 summary">
+                        <div><h5><b>Summary</b></h5></div>
+                        <hr>
+                        <div>
+                            <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
+                            <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
+                            <h5 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h5>
+                            {% if free_delivery_delta > 0 %}
+                                <p class="mb-1 text-danger">
+                                    You could get free delivery by spending just <strong>€{{ free_delivery_delta }}</strong> more!
+                                </p>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <a href="" class="btn btn-outline-dark btn-block">
+                                <span class="text-uppercase">Secure Checkout</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+            </div>
             {% else %}
                 <p class="lead mb-5">{{ request.user.username}}, your bag is empty.</p>
-                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-0 btn-lg">
                     <span class="icon">
                         <i class="fas fa-chevron-left"></i>
                     </span>
