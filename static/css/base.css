@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,900;1,900&display=swap');
 
+.message-container {
+    position: fixed;
+    top: 50px;
+    right: 30px;
+    z-index: 9999;
+}
+
 .index-text {
     font-family: 'Schibsted Grotesk', sans-serif;
     font-weight: 900;
