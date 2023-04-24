@@ -23,22 +23,49 @@
                         {% for item in bag_items %}
                         <div class="row border-top border-bottom">
                             <div class="row align-items-center bag-item-row">
-                                <div class="col-3"><img class="img-fluid" src="{{ item.album.image.url }}"></div>
                                 <div class="col-3">
-                                    <div class="row text-muted">{{ item.album.name }}</div>
-                                    <div class="row">{{ item.album.genre.friendly_name }}</div>
+                                    <img class="img-fluid" src="{{ item.album.image.url }}">
                                 </div>
-                                <div class="col-3">
-                                    <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                                </div>
-                                <div class="col-3">
-                                    <div>
-                                        &euro; {{ item.album.price }}
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-3">
+                                            <div class="row text-muted">{{ item.album.name }}</div>
+                                            <div class="row">{{ item.album.genre.friendly_name }}</div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <form class="form update-form" action="{% url 'adjust_bag' item.item_id %}" method="POST">
+                                                {% csrf_token %}
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <span class="input-group-prepend">
+                                                            <button class="btn btn-outline-secondary btn-sm decrement-qty"
+                                                                    data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                                <span><i class="fas fa-minus fa-sm"></i></span>
+                                                            </button>
+                                                        </span>
+                                                        <input class="qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="5" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                                        <span class="input-group-append">
+                                                            <button class="btn btn-outline-secondary btn-sm increment-qty"
+                                                                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                                <span><i class="fas fa-plus fa-sm"></i></span>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <div>
+                                                € {{ item.album.price }}
+                                            </div>
+                                            <div>
+                                                € {{ item.subtotal }}</strong>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <a class="remove-item btn btn-outline-danger btn-sm" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                        </div>
                                     </div>
-                                    <div>
-                                        &#10005;
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
@@ -89,4 +116,35 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'products/js/quantity_input_script.js' %}"></script>
+
+    <script type="text/javascript">
+        // Update quantity on click
+        $('.increment-qty').click(function(e) {
+            var form = e.currentTarget.form;
+            form.submit();
+        })
+
+        $('.decrement-qty').click(function(e) {
+            var form = e.currentTarget.form;
+            form.submit();
+        })
+
+        // Remove item and reload on click
+        $('.remove-item').click(function(e) {
+            var csrfToken = "{{ csrf_token }}";
+            var itemId = $(this).attr('id').split('remove_')[1];
+            var url = `/bag/remove/${itemId}/`;
+            var data = {'csrfmiddlewaretoken': csrfToken,};
+
+            $.post(url, data)
+             .done(function() {
+                 location.reload();
+             });
+        })
+    </script>
 {% endblock %}

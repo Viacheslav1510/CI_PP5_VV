@@ -15,10 +15,12 @@ def bag_contents(request):
         album = get_object_or_404(Album, pk=item_id)
         total += quantity * album.price
         product_count += quantity
+        subtotal = quantity * album.price
         bag_items.append({
             'album': album,
             'item_id': item_id,
-            'quantity': quantity
+            'quantity': quantity,
+            'subtotal': subtotal,
         })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:

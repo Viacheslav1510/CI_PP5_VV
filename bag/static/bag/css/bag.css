@@ -16,3 +16,10 @@
 .summary {
     background-color: #CE5959;
 }
+
+
+.qty_input {
+    text-align: center;
+    width: 60px;
+    padding: 3px;
+}
