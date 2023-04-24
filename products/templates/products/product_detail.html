@@ -30,7 +30,19 @@
                         <p class="mt-3"><strong>Quantity:</strong></p>
                         <div class="form-group w-50">
                             <div class="input-group">
+                                <span class="input-group-prepend">
+                                    <button class="btn btn-outline-secondary btn-number decrement-qty"
+                                            data-item_id="{{ album.id }}" id="decrement-qty_{{ album.id }}">
+                                        <span><i class="fa-solid fa-minus"></i></span>
+                                    </button>
+                                </span>
                                 <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="5" data-item_id="{{ album.id }}" id="id_qty_{{ album.id }}">
+                                <span class="input-group-append">
+                                    <button class="btn btn-outline-secondary btn-number increment-qty"
+                                            data-item_id="{{ album.id }}" id="increment-qty_{{ album.id }}">
+                                        <span><i class="fa-solid fa-plus"></i></span>
+                                    </button>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -58,4 +70,9 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'products/js/quantity_input_script.js' %}"></script>
 {% endblock %}
