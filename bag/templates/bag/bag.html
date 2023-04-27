@@ -134,6 +134,14 @@
             form.submit();
         })
 
+        $(`.qty_input`).keypress(function(e) {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                var form = e.currentTarget.form;
+                form.submit();
+            }
+        });
+
         // Remove item and reload on click
         $('.remove-item').click(function(e) {
             var csrfToken = "{{ csrf_token }}";

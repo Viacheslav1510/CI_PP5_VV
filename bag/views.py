@@ -35,6 +35,10 @@ def adjust_bag(request, item_id):
     album = get_object_or_404(Album, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
+    if quantity < 1:
+        quantity = 1
+    if quantity > 5:
+        quantity = 5
     bag = request.session.get('bag', {})
     bag[item_id] = quantity
     messages.success(request, f'Updated {album.name} quantity')

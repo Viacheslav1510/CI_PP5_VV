@@ -1,4 +1,4 @@
-// Disable +/- buttons outside 1-99 range
+// Disable +/- buttons outside 1-5 range
 function handleEnableDisable(itemId) {
     var currentValue = parseInt($(`#id_qty_${itemId}`).val());
     var minusDisabled = currentValue < 2;
@@ -22,20 +22,33 @@ $('.qty_input').change(function() {
 
 // Increment quantity
 $('.increment-qty').click(function(e) {
-   e.preventDefault();
-   var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-   var currentValue = parseInt($(closestInput).val());
-   $(closestInput).val(currentValue + 1);
-   var itemId = $(this).data('item_id');
-   handleEnableDisable(itemId);
-});
+    e.preventDefault();
+    var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+    var currentValue = parseInt($(closestInput).val());
+    if (currentValue < 1 ) {
+        currentValue = 1
+    }
+    if (currentValue > 5 ) {
+        currentValue = 5
+    }
+    $(closestInput).val(currentValue + 1);
+    var itemId = $(this).data('item_id');
+    handleEnableDisable(itemId);
+    });
 
 // Decrement quantity
 $('.decrement-qty').click(function(e) {
-   e.preventDefault();
-   var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-   var currentValue = parseInt($(closestInput).val());
-   $(closestInput).val(currentValue - 1);
-   var itemId = $(this).data('item_id');
-   handleEnableDisable(itemId);
+    e.preventDefault();
+    var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+    var currentValue = parseInt($(closestInput).val());
+    if (currentValue < 1 ) {
+        currentValue = 1
+    }
+    if (currentValue > 5 ) {
+        currentValue = 5
+    }
+    $(closestInput).val(currentValue - 1);
+    var itemId = $(this).data('item_id');
+    console.log('minus');
+    handleEnableDisable(itemId);
 });
