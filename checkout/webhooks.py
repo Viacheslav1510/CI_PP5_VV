@@ -24,7 +24,7 @@ def webhook(request):
     except ValueError as e:
         # Invalid payload
         return HttpResponse(status=400)
-    except stripe.eror.SignatureVerificationError as e:
+    except stripe.error.SignatureVerificationError as e:
         # Invalid signature
         return HttpResponse(status=400)
     except Exception as e:
