@@ -27,7 +27,7 @@ class StripeWH_Handler:
         """
         intent = event.data.object
         pid = intent.id
-        basket = intent.metadata.basket
+        bag = intent.metadata.basket
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
