@@ -29,7 +29,7 @@ class StripeWH_Handler:
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
-        
+
         stripe_charge = stripe.Charge.retrieve(
             intent.latest_charge
         )
