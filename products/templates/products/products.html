@@ -48,10 +48,16 @@
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="product-wrapper mb-45 text-center">
                        <div class="product-img-container">
+                        {% if album.image %}
                           <a href="{% url 'product_detail' album.id %}" data-abc="true">
                             <img src="{{ album.image.url }}" alt="{{ album.name }}" class="products-image">
                           </a>
                             <span class="text-center"><i class="fa-solid fa-euro-sign"></i> {{ album.price }}</span>
+                        {% else %}
+                            <a href="{% url 'product_detail' album.id %}"><img class="products-image"
+                                    src="{{ MEDIA_URL }}noimage.webp" alt="Default no image for {{ album.name }}"></a>
+                            <span class="text-center"><i class="fa-solid fa-euro-sign"></i> {{ album.price }}</span>
+                        {% endif %}
                           <div class="product-action">
                              <div class="product-action-style">
                                 <a href="{% url 'product_detail' album.id %}"> <i class="fa fa-plus"></i></a>
@@ -60,12 +66,21 @@
                                 {% else %}
                                     <small class="text-muted">No Rating</small>
                                 {% endif %}
-                                <a href="#"> <i class="fa-brands fa-opencart"></i> </a>
+                                <div class="add-to-bag">
+                                    <form action="{% url 'add_to_bag' album.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <select class="d-none" name="quantity">
+                                            <option>1</option>
+                                        </select>
+                                        <button class="btn btn-link text-muted" type="submit"><i class="fa-brands fa-opencart"></i></button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                </div>
                             </div>
                           </div>
                        </div>
                        <div>
-                        <a href="{% url 'product_detail' album.id %}"><h5 class="text-white bold mt-1">{{ album.name }}</h5></a>
+
                        </div>
                     </div>
                  </div>

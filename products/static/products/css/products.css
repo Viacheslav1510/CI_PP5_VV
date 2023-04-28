@@ -8,6 +8,10 @@
     background-color: #F3E99F;
 }
 
+.add-to-bag {
+    display: inherit;
+}
+
 .custom-select {
     width: 40%;
 }
@@ -66,7 +70,7 @@
     background-color: #fff;
     box-shadow: 0 0 8px 1.7px rgba(0, 0, 0, 0.06);
     display: inline-block;
-    padding: 16px 2px 12px
+    border-radius: 10px;
 }
 
 .product-action-style >a{
