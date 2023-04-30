@@ -16,3 +16,6 @@ class AlbumForm(forms.ModelForm):
         self.fields['genre'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
+
+        super(AlbumForm, self).__init__(*args, **kwargs)
+        self.fields['image'].required = True

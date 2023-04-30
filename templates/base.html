@@ -100,7 +100,7 @@
               <div class="dropdown-menu">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                <a class="dropdown-item" href="#">Add Product</a>
+                <a class="dropdown-item" href="{% url 'add_product' %}">Add Product</a>
                 {% endif %}
                 <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
