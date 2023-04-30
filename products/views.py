@@ -84,3 +84,28 @@ def add_product(request):
     }
 
     return render(request, template, context)
+
+
+def edit_product(request, product_id):
+    """ Edit a product in the store """
+    album = get_object_or_404(Album, pk=product_id)
+    if request.method == 'POST':
+        form = AlbumForm(request.POST, request.FILES, instance=album)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('product_detail', args=[album.id]))
+        else:
+            messages.error(request, 'Failed to update product. \
+                            Please ensure the form is valid.')
+    else:
+        form = AlbumForm(instance=album)
+        messages.info(request, f'You are editing {album.name}')
+
+    template = 'products/update_product.html'
+    context = {
+        'form': form,
+        'album': album,
+    }
+
+    return render(request, template, context)
