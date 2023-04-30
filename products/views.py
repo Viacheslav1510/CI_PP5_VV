@@ -70,9 +70,9 @@ def add_product(request):
     if request.method == 'POST':
         form = AlbumForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            album = form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('product_detail', args=[album.id]))
         else:
             messages.error(request, 'Failed to add product. \
                            Please ensure the form is valid.')
@@ -108,4 +108,18 @@ def edit_product(request, product_id):
         'album': album,
     }
 
+    return render(request, template, context)
+
+
+def delete_product(request, product_id):
+    """ Delete a product from the store """
+    album = get_object_or_404(Album, pk=product_id)
+    if request.method == 'POST':
+        album.delete()
+        messages.success(request, 'Product deleted!')
+        return redirect(reverse('products'))
+    template = 'products/delete-confirmation.html'
+    context = {
+        'album': album,
+    }
     return render(request, template, context)

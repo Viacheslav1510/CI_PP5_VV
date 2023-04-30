@@ -76,8 +76,14 @@
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     </form>
                                 </div>
+                                <div class="d-block">
+                                    {% if request.user.is_superuser %}
+                                        <a href="{% url 'delete_product' album.id %}" class="btn btn-danger btn-sm m-1 float-right">Delete</a>
+                                        <a href="{% url 'edit_product' album.id %}" class="btn btn-dark btn-sm m-1 float-left pl-2 pr-2">  Edit  </a>
+                                    {% endif %}
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                        </div>
                        <div class="pt-3">
                             <a href="{% url 'product_detail' album.id %}" class="text-decoration-none text-white"><h5>{{ album.name }}</h5></a>
