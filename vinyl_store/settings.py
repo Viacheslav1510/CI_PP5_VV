@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
-ALLOWED_HOSTS = ['ci-tvv-pp5.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['ci-tvv-pp5.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
+    'wishlist',
 ]
 
 MIDDLEWARE = [
@@ -132,8 +133,11 @@ else:
     }
 
 # DATABASES = {
-#      'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-#  }
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
