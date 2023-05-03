@@ -60,10 +60,10 @@
                         {% endif %}
                           <div class="product-action">
                              <div class="product-action-style">
-                                {% if allbum in wished_products %}
+                                {% if user.is_authenticated %}
                                     <a href="{% url 'add_to_wishlist_all' album.id user.id %}"><i class="fa fa-heart text-danger"></i></a>
                                 {% else %}
-                                    <a href="{% url 'remove_from_wishlist_all' wishlist_item.id %}"><i class="fa fa-heart"></i></a>
+                                    <a href="{% url 'account_login' %}"><i class="fa fa-heart fa fa-heart text-secondary"></i></a>
                                 {% endif %}
                                 {% if album.rating %}
                                     <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ album.rating }} / 5</small>

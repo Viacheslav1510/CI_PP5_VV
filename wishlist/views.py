@@ -83,25 +83,3 @@ def add_to_wishlist_all_products(request, product_id, user_id):
     else:
         messages.info(request, 'Product is already in your wishlist.')
     return redirect(reverse('products'))
-
-
-@login_required
-def remove_from_wishlist_all_products(request, wishlist_id):
-    """
-    Remove item from wishlist
-    """
-    wishlist_item = Wishlist.objects.get(id=wishlist_id)
-
-    wishlist_item.delete()
-    messages.success(request, 'Removed from wishlist!!')
-    referer = request.META.get('HTTP_REFERER')
-    context = {
-        'wishlist_func': True
-    }
-    if referer:
-        if 'wishlist' in referer:
-            return redirect('wishlist', context)
-        else:
-            return redirect(referer, context)
-    else:
-        return redirect('wishlist', context)

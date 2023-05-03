@@ -47,24 +47,12 @@ def all_products(request):
             queries = Q(name__icontains=query) | \
                 Q(description__icontains=query)
             albums = albums.filter(queries)
-    if request.user.is_authenticated:
-        user = request.user
-        wishlist = Wishlist.objects.filter(user=user)
-        wishedProducts = Wishlist.objects.filter(user=user)
-        wishedProductsList = []
-        for i in wishedProducts:
-            wishedProductsList.append(i.product)
-    else:
-        wishedProducts = {}
-        wishedProductsList = {}
 
     current_sort = f'{sort}_{direction}'
     context = {
         'albums': albums,
         'search_term': query,
         'current_sort': current_sort,
-        'wished_products': wishedProducts,
-        'wishlist': wishlist
     }
     return render(request, 'products/products.html', context)
 
