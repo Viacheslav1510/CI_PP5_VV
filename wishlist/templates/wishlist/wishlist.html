@@ -17,7 +17,7 @@
                         <div class="title">
                             <div class="row pr-2">
                                 <div class="col"><h4><b>Wishlist</b></h4></div>
-                                <div class="col align-self-center text-right text-muted">{{ whishlist_count }} items</div>
+                                <div class="col align-self-center text-right text-muted">{{ items_count }} items</div>
                             </div>
                         </div>
                         {% for item in wishlist %}
@@ -57,7 +57,7 @@
                 </div>
             </div>
             {% else %}
-                <p class="lead mb-5">{{ profile.user.username}}, your wishlist is empty.</p>
+                <p class="lead mb-5">{{ user.username}}, your wishlist is empty.</p>
                 <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-0 btn-lg">
                     <span class="icon">
                         <i class="fas fa-chevron-left"></i>

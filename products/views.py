@@ -6,6 +6,7 @@ from django.db.models.functions import Lower
 
 from .models import Album, Genre
 from .forms import AlbumForm
+from wishlist.models import Wishlist
 
 
 def all_products(request):
@@ -58,10 +59,21 @@ def all_products(request):
 
 def product_detail(request, product_id):
     album = get_object_or_404(Album, pk=product_id)
+    user = request.user
+    in_wishlist = False
+    wishlist_item = None
+    if user.is_authenticated:
+        wishlist_item = Wishlist.objects.filter(
+            product=album, user=user).first()
+        in_wishlist = Wishlist.objects.filter(
+            product=album, user=user).exists()
+
     tracks = album.tracks.all()
     context = {
         'album': album,
         'tracks': tracks,
+        'in_wishlist': in_wishlist,
+        'wishlist_item': wishlist_item,
     }
     return render(request, 'products/product_detail.html', context)
 

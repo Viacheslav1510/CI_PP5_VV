@@ -1,5 +1,6 @@
 from django.db import models
-from profiles.models import UserProfile
+from django.contrib.auth.models import User
+
 from products.models import Album
 
 
@@ -14,13 +15,10 @@ class Wishlist(models.Model):
         on_delete=models.CASCADE
     )
     user = models.ForeignKey(
-        UserProfile,
+        User,
         related_name='wishlist',
         on_delete=models.CASCADE
     )
 
     def __str__(self):
         return self.product.name
-
-    def whishlist_count(self):
-        return self.whishlist_set.filter(user=UserProfile).count()
