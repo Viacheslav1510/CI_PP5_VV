@@ -26,3 +26,7 @@ select:invalid,
 select option[value=""] {
     color: #aab7c4 !important;
 }
+
+.checkout {
+    background-color: #F1EFDC
+}
