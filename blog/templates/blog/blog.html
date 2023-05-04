@@ -15,7 +15,9 @@
                 <p class="date">{{ post.date_created }}</p>
                 <p class="title">{{ post.title }}</p>
                 </div>
-                <img src="{{ post.featured_image.url }}" alt="cover" />
+                <a href="{% url 'post-details' post.id %}" class="text-decoration-none">
+                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}-image">
+                </a>
             </div>
         </div>
         {% endfor %}

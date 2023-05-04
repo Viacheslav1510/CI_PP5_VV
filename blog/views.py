@@ -18,3 +18,15 @@ def blog_home(request):
         'page_obj': page_obj
     }
     return render(request, template, context)
+
+
+def post_details(request, post_id):
+    """
+    A function to open post details page
+    """
+    post = get_object_or_404(Post, pk=post_id)
+    template = 'blog/post-details.html'
+    context = {
+        'post': post,
+    }
+    return render(request, template, context)
