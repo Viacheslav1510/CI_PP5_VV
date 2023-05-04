@@ -62,9 +62,16 @@
             </h4>
             <h4><i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</h4>
             <h4><i class="fas fa-print me-3 text-secondary"></i> + 01 234 567 89</h4>
+            <div id="map"></div>
         </div>
     </div>
 </div>
 
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+    <script src="{% static 'contact/js/map.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ9ih5qY1upCnqAYhY2qQ7hw_syVMgp0U&callback=initMap&v=weekly" defer></script>
 {% endblock %}
