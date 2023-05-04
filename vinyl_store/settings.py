@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_summernote',
+    "phonenumber_field",
     'crispy_forms',
     'home',
     'products',
@@ -53,6 +54,7 @@ INSTALLED_APPS = [
     'profiles',
     'wishlist',
     'blog',
+    'contact',
 ]
 
 MIDDLEWARE = [
