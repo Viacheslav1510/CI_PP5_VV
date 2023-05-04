@@ -16,21 +16,27 @@ def get_user_instance(request):
 
 
 def contact_view(request):
-    if request.method == 'POST':
-        email = request.user.email
-        contact_form = ContactForm(request.POST, initial={'email': email})
-        if contact_form.is_valid():
-            contact = contact_form.save(commit=False)
-            contact.user = request.user
-            contact.save()
-            messages.info(request, "Massage has been sent")
-        return render(request, 'contact/message-received.html')
-    else:
+    if request.user.is_authenticated:
         email = request.user.email
         contact_form = ContactForm(initial={'email': email})
+        if request.method == 'POST':
+            contact_form = ContactForm(data=request.POST)
+
+            if contact_form.is_valid():
+                contact = contact_form.save(commit=False)
+
+                return render(
+                        request,
+                        'contact/contact.html',
+                        {
+                            'contact_form': contact_form
+                        }
+                    )
+    else:
+        contact_form = ContactForm()
+
     template = 'contact/contact.html'
     context = {
         'contact_form': contact_form
     }
-
     return render(request, template, context)
