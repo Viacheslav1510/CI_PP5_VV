@@ -11,8 +11,8 @@
         <div class="col-12 col-md-7 py-3 contact-form">
 
             {% if not user.is_authenticated %}
-            <h2 class="">Message Us</h2>
-            <p class="">Please login to send a message!</p>
+            <h2>Message Us</h2>
+            <p>Please login to send a message!</p>
             <a href="{% url 'account_login' %}" class="btn btn-success rounded m-2">
                 <span class="font-weight-bold">Login</span>
             </a>
@@ -24,34 +24,39 @@
             {% if user.is_authenticated %}
             <div class="row text-center">
                 <div class="col-12">
-                    <h2 class="fw-bold mt-3 text-danger">Send Message</h2>
+                    <h2 class="fw-bold mt-3 text-white">Send Message</h2>
                     <hr>
+                    <div class="row">
+                        <div class="col-8 offset-2">
+                            <form method="POST" class="text-white" enctype="multipart/form-data">
+                                {% csrf_token %}
+                
+                                {{ contact_form| crispy }}
+                
+                                <button class="btn btn-outline-light float-right" type="submit">Send</button>
+                            </form>
+                            {% endif %}
+                            {% endif %}
+                            <!-- Form Errors from stack overflow -->
+                            {% if contact_form.errors %}
+                            {% for field in contact_form %}
+                            {% for error in field.errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                            {% endfor %}
+                            {% endfor %}
+                            {% for error in contact_form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-            <form method="POST" class="text-danger" enctype="multipart/form-data">
-                {% csrf_token %}
-
-                {{ contact_form| crispy }}
-
-                <button class="btn btn-outline-dark float-right" type="submit">Send</button>
-            </form>
-            {% endif %}
-            {% endif %}
-            <!-- Form Errors from stack overflow -->
-            {% if contact_form.errors %}
-            {% for field in contact_form %}
-            {% for error in field.errors %}
-            <div class="alert alert-danger">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endfor %}
-            {% for error in contact_form.non_field_errors %}
-            <div class="alert alert-danger">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {% endif %}
         </div>
         <div class="col-12 col-md-5">
             <h2 class="text-uppercase custom-heading fw-bold mb-4 text-secondary">Contact</h2>
