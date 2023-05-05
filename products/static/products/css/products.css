@@ -1,9 +1,13 @@
 /* containers */
 .products-container {
     min-height: 90vh;
-    background-color: crimson;
+    background-color: #D2001A;
 }
 
+.genres-container {
+    background-color: #D2001A;
+    border: none;
+}
 .products-detail-container {
     background-color: #D8CCA3;
 }
