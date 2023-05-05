@@ -61,7 +61,11 @@
                           <div class="product-action">
                              <div class="product-action-style">
                                 {% if user.is_authenticated %}
+                                    {% if album in wished_list %}
+                                    <a href="{% url 'remove_from_wishlist_all' album.id user.id %}"><i class="fa fa-heart text-secondary"></i></a>
+                                    {% else %}
                                     <a href="{% url 'add_to_wishlist_all' album.id user.id %}"><i class="fa fa-heart text-danger"></i></a>
+                                    {% endif %}
                                 {% else %}
                                     <a href="{% url 'account_login' %}"><i class="fa fa-heart fa fa-heart text-secondary"></i></a>
                                 {% endif %}

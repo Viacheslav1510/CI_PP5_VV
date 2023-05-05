@@ -19,4 +19,9 @@ urlpatterns = [
         views.add_to_wishlist_all_products,
         name='add_to_wishlist_all'
     ),
+    path(
+        'remove_from_wishlist_all/<int:product_id>/<int:user_id>',
+        views.remove_from_wishlist_all,
+        name='remove_from_wishlist_all'
+    ),
 ]

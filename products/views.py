@@ -48,11 +48,19 @@ def all_products(request):
                 Q(description__icontains=query)
             albums = albums.filter(queries)
 
+    user = request.user
+    wished_list = []
+    if user.is_authenticated:
+        wishlist = Wishlist.objects.filter(user=user)
+        for i in wishlist:
+            wished_list.append(i.product)
     current_sort = f'{sort}_{direction}'
     context = {
         'albums': albums,
         'search_term': query,
         'current_sort': current_sort,
+        'wished_list': wished_list,
+
     }
     return render(request, 'products/products.html', context)
 

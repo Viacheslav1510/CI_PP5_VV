@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -50,20 +50,16 @@ def remove_from_wishlist(request, wishlist_id):
     Remove item from wishlist
     """
     wishlist_item = Wishlist.objects.get(id=wishlist_id)
-
     wishlist_item.delete()
     messages.success(request, 'Removed from wishlist!!')
     referer = request.META.get('HTTP_REFERER')
-    context = {
-        'wishlist_func': True
-    }
     if referer:
         if 'wishlist' in referer:
-            return redirect('wishlist', context)
+            return redirect('wishlist')
         else:
-            return redirect(referer, context)
+            return redirect(referer)
     else:
-        return redirect('wishlist', context)
+        return redirect('wishlist')
 
 
 @login_required
@@ -82,4 +78,24 @@ def add_to_wishlist_all_products(request, product_id, user_id):
         messages.success(request, 'Product added to wishlist!')
     else:
         messages.info(request, 'Product is already in your wishlist.')
-    return redirect(reverse('products'))
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required
+def remove_from_wishlist_all(request, product_id, user_id):
+    """
+    Remove item from wishlist
+    """
+    product = Album.objects.get(id=product_id)
+    user = User.objects.get(id=user_id)
+    wishlist_item = Wishlist.objects.filter(product=product, user=user)
+    wishlist_item.delete()
+    messages.success(request, 'Removed from wishlist!!')
+    referer = request.META.get('HTTP_REFERER')
+    if referer:
+        if 'wishlist' in referer:
+            return redirect('wishlist')
+        else:
+            return redirect(referer)
+    else:
+        return redirect('wishlist')
