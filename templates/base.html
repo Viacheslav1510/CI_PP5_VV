@@ -1,3 +1,4 @@
+{% load active_link_tags %}
 {% load static %}
 <!doctype html>
 <html lang="en">
@@ -51,11 +52,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            {% url 'home' as home_view %}
+            <li class="nav-item {% if request.get_full_path == home_view %} active {% endif%}">  
               <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             <!-- Shop Dropdown -->
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown {% active_link 'products' 'active' %}">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                 Shop
               </a>
@@ -68,11 +70,11 @@
                 <a class="dropdown-item text-muted" href="{% url 'products' %}">All Albums</a>
               </div>
               <!-- Blog -->
-            <li class="nav-item">
+            <li class="nav-item {% active_link 'blog' 'active' %}">
               <a class="nav-link" href="{% url 'blog' %}">Blog</a>
             </li>
             <!-- Contact -->
-            <li class="nav-item">
+            <li class="nav-item {% active_link 'contact' 'active' %}">
               <a class="nav-link" href="{% url 'contact' %}">Contact</a>
             </li>
           </ul>

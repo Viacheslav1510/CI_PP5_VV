@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_summernote',
     "phonenumber_field",
     'crispy_forms',
+    'active_link',
     'home',
     'products',
     'bag',

@@ -8,6 +8,17 @@
     background-color: #D2001A;
     border: none;
 }
+
+.genres-container a {
+    min-width: 110px;
+}
+.banner-divider {
+    height: 5px;
+    width: 30%;
+    background-color: #DAB88B;
+    border-radius: 5px;
+}
+
 .products-detail-container {
     background-color: #D8CCA3;
 }

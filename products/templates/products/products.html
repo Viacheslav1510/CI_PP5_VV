@@ -8,9 +8,9 @@
 {% block content %}
 <div class="container-fluid products-container">
     <div id="delivery-banner" class="row text-center">
-        <div class="col bg-black text-white">
-            <h4 class="logo-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
-            <hr class="main-divider">
+        <div class="col bg-black">
+            <h4 class="logo-font my-1 text-warning">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
+            <hr class="banner-divider">
         </div>
     </div>
     <div class="col text-center pt-3">
@@ -42,15 +42,17 @@
                 
             </div>
         </div>
-        <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-end justify-content-md-end">
-            <ul class="list-group list-group-horizontal-md">
+        
+        <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+            <ul class="nav">
                 {% for genre in genres_list %}
-                <li class="list-group-item genres-container"><a class="btn btn-outline-light p-2"
+                <li class="nav-link genres-container"><a class="btn btn-outline-light btn-sm p-1"
                     href="{% url 'products' %}?genre={{genre.name}}">{{ genre.friendly_name }}</a></li>
                 {% endfor %}
             </ul>
         </div>
     </div>
+    <hr>
     <div class="row">
         <div class="col">
             <div class="row"></div>
