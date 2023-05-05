@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,900;1,900&display=swap');
 
+.signup-section {
+    background-color: #B04759;
+}
+
+.verify-container {
+    padding: 100px;
+}
+
+.confirm-email-container{
+    padding: 90px;
+}
+
+.logout-container {
+    padding: 100px;
+}
+
 .message-container {
     position: fixed;
     top: 50px;

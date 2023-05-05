@@ -97,7 +97,7 @@
                 {% if request.user.is_authenticated %}
                 <i class="fa-brands fa-napster text-danger fa-2x"></i>
                 {% else %}
-                <i class="fa-brands fa-napster fa-lg text-white"></i>
+                <i class="fa-brands fa-napster text-white fa-2x"></i>
                 {% endif %}
               </div>
               <!-- Login Dropdown -->
@@ -119,7 +119,7 @@
           <!-- Bag -->
           <ul class="navbar-nav me-auto ml-lg-3 mr-lg-3 ms-lg-auto mb-2 mb-lg-0">
             <li class="list-inline-item">
-              <a class="{% if grand_total %}text-white font-weight-bold{% else %}text-danger{% endif %} text-center nav-link" href="{% url 'bag' %}">
+              <a class="{% if grand_total %}text-white font-weight-bold{% else %}text-danger{% endif %} nav-link" href="{% url 'bag' %}">
                 <div>
                   <div><i class="fa-brands fa-opencart fa-lg text-white {% if grand_total %}text-danger{% endif %}" aria-hidden="true"></i></div>
                   <p class="my-0">
