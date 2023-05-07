@@ -39,8 +39,11 @@ def adjust_bag(request, item_id):
             quantity = int(request.POST.get('quantity'))
             if quantity < 1:
                 quantity = 1
+                messages.warning(request, "You can't choose less than 1")
             if quantity > 5:
                 quantity = 5
+                messages.warning(request, "Sorry, \
+                    You can't choose more than 5")
             break
         except ValueError:
             messages.warning(request, "Invalid input")
