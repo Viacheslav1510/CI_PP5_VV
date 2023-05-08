@@ -10,11 +10,17 @@ from .models import Order, OrderLineItem
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
+    """
+    A class to register OrderInlineItem model in admin panel
+    """
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)
 
 
 class OrderAdmin(admin.ModelAdmin):
+    """
+    A class to register Order model in admin panel
+    """
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = (

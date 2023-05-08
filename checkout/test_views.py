@@ -1,12 +1,18 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth.models import User
-
+# Internal:
 from products.models import Album
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class TestCheckoutViews(TestCase):
-
+    """
+    A class to test checkout views
+    """
     def setUp(self):
         self.client = Client()
         self.test_album = Album.objects.create(
@@ -27,6 +33,9 @@ class TestCheckoutViews(TestCase):
         self.checkout_url = reverse('checkout')
 
     def test_checkout_view_get(self):
+        """
+        A function to test used template for checkout page
+        """
         response = self.client.get(self.checkout_url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'checkout/checkout.html')

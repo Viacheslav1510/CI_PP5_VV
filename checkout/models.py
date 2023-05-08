@@ -1,16 +1,21 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 import uuid
-
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 from django_countries.fields import CountryField
-
+# Internal:
 from products.models import Album
 from profiles.models import UserProfile
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class Order(models.Model):
-
+    """
+    A class to create Order model
+    """
     order_number = models.CharField(
         max_length=35,
         null=False,

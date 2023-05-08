@@ -29,11 +29,17 @@ class TestBagViews(TestCase):
                                 )
 
     def test_get_bag_view(self):
+        """
+        a test to get bag template
+        """
         response = self.client.get(self.bag_url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed('bag/bag.html')
 
     def test_add_to_bag_view(self):
+        """
+        a test to add product to bag
+        """
         data = {
             'quantity': 1,
             'redirect_url': '/bag/'
@@ -44,6 +50,9 @@ class TestBagViews(TestCase):
         self.assertEqual(len(self.client.session['bag']), 1)
 
     def test_adjust_bag_view(self):
+        """
+        a test to update product in bag
+        """
         data = {
             'quantity': 3,
             'redirect_url': '/bag/'
@@ -54,6 +63,9 @@ class TestBagViews(TestCase):
         self.assertEqual(self.client.session['bag'][str(self.album.id)], 3)
 
     def test_adjust_bag_view_quantity_less_than_1(self):
+        """
+        a test to update product with product quantity less than 1
+        """
         data = {
             'quantity': -1,
             'redirect_url': '/bag/'
@@ -69,6 +81,9 @@ class TestBagViews(TestCase):
         )
 
     def test_remove_from_bag_view(self):
+        """
+        a test to remove product from bag
+        """
         data = {
             'quantity': 1,
             'redirect_url': '/bag/'
@@ -79,6 +94,9 @@ class TestBagViews(TestCase):
         self.assertEqual(len(self.client.session['bag']), 0)
 
     def test_remove_from_bag_view_fail(self):
+        """
+        a test to fail remove product from bag
+        """
         response = self.client.post(self.remove_from_bag_url)
         self.assertEqual(response.status_code, 500)
         messages = list(get_messages(response.wsgi_request))
