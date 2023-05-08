@@ -6,11 +6,7 @@ from products.models import Album
 
 
 def bag_view(request):
-
-    context = {
-
-    }
-    return render(request, 'bag/bag.html', context)
+    return render(request, 'bag/bag.html')
 
 
 def add_to_bag(request, item_id):
