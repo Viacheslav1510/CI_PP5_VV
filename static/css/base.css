@@ -65,7 +65,6 @@
 .line-one {
     content: "";
     position: absolute;
-    top: 100;
     right: 113%;
     height: 100%;
     width: 6vh;
@@ -79,7 +78,6 @@
 .line-two {
     content: "";
     position: absolute;
-    top: 100;
     right: 107%;
     height: 100%;
     width: 6vh;
@@ -93,7 +91,6 @@
 .line-three {
     content: "";
     position: absolute;
-    top: 100;
     right: 101%;
     height: 100%;
     width: 6vh;
@@ -107,7 +104,6 @@
 .line-four {
     content: "";
     position: absolute;
-    top: 100;
     right: 95%;
     height: 100%;
     width: 6vh;
