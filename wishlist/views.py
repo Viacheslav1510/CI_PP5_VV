@@ -1,10 +1,14 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
-
+# Internal:
 from .models import Wishlist
 from products.models import Album
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 @login_required
@@ -65,7 +69,7 @@ def remove_from_wishlist(request, wishlist_id):
 @login_required
 def add_to_wishlist_all_products(request, product_id, user_id):
     """
-    Add product to wishlist
+    Add product to wishlist on all products page
     """
     product = Album.objects.get(id=product_id)
     user = User.objects.get(id=user_id)
@@ -84,7 +88,7 @@ def add_to_wishlist_all_products(request, product_id, user_id):
 @login_required
 def remove_from_wishlist_all(request, product_id, user_id):
     """
-    Remove item from wishlist
+    Remove item from wishlist on all products page
     """
     product = Album.objects.get(id=product_id)
     user = User.objects.get(id=user_id)
