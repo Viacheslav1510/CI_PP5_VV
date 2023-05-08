@@ -1,8 +1,12 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib import messages
-
+# Internal:
 from .forms import ContactForm
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 def get_user_instance(request):
@@ -16,6 +20,10 @@ def get_user_instance(request):
 
 
 def contact_view(request):
+    """
+    A function to render contact page,
+    provide contact form
+    """
     if request.user.is_authenticated:
         email = request.user.email
         contact_form = ContactForm(initial={'email': email})
