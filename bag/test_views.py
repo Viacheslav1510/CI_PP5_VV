@@ -1,12 +1,18 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.contrib.messages import get_messages
 from django.urls import reverse
 from django.test import TestCase, Client
-
+# Internal:
 from products.models import Album, Genre
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class TestBagViews(TestCase):
-
+    """
+    A class for all bag views tests
+    """
     def setUp(self):
         self.client = Client()
         self.album = Album.objects.create(

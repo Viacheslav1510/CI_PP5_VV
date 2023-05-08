@@ -1,11 +1,18 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
+# Internal:
 from products.models import Album
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 def bag_contents(request):
-
+    """
+    A function to collect all bag data and send it on all website pages
+    """
     bag_items = []
     bag = request.session.get('bag', {})
     total = 0

@@ -1,16 +1,25 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.shortcuts import (render, redirect, reverse, get_object_or_404,
                               HttpResponse)
 from django.contrib import messages
-
+# Internal:
 from products.models import Album
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 def bag_view(request):
+    """
+    A function to show bag page
+    """
     return render(request, 'bag/bag.html')
 
 
 def add_to_bag(request, item_id):
-    """ Add a quantity of the specified product to the shopping bag """
+    """
+    A function to add a quantity of the specified product to the shopping bag
+    """
     album = get_object_or_404(Album, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -27,7 +36,10 @@ def add_to_bag(request, item_id):
 
 
 def adjust_bag(request, item_id):
-
+    """
+    A function to adjust the quantity of the
+    specified product to the specified amount
+    """
     album = get_object_or_404(Album, pk=item_id)
 
     while True:
@@ -55,7 +67,9 @@ def adjust_bag(request, item_id):
 
 
 def remove_from_bag(request, item_id):
-
+    """
+    A function to remove the item from the shopping bag
+    """
     try:
         album = get_object_or_404(Album, pk=item_id)
         bag = request.session.get('bag', {})

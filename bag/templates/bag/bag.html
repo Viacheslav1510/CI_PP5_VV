@@ -135,12 +135,12 @@
         $('.increment-qty').click(function(e) {
             var form = e.currentTarget.form;
             form.submit();
-        })
+        });
 
         $('.decrement-qty').click(function(e) {
             var form = e.currentTarget.form;
             form.submit();
-        })
+        });
 
         $(`.qty_input`).keypress(function(e) {
             if (e.keyCode === 13) {
@@ -161,6 +161,6 @@
              .done(function() {
                  location.reload();
              });
-        })
+        });
     </script>
 {% endblock %}
