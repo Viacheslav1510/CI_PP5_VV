@@ -318,11 +318,21 @@
     }
   }
 
+  /* footer */
 footer {
     background-color: #332C39;
 }
 
+.custom-heading {
+  font-size: 1.7rem;
+}
 
+/* mailchimp*/
+#mc_embed_signup {
+  background: #332C39;
+  clear: left;
+  width: 600px;
+}
 
 /* media*/
 
