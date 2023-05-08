@@ -28,12 +28,3 @@
 
 
 {% endblock %}
-
-{% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-        var value = $('.content').val()
-        console.log(value);
-        $('textarea.content-body').summernote('pasteHTML', value);
-    </script>
-{% endblock %}
