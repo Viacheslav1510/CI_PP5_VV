@@ -26,10 +26,10 @@ $('.increment-qty').click(function(e) {
     var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
     var currentValue = parseInt($(closestInput).val());
     if (currentValue < 1 ) {
-        currentValue = 1
+        currentValue = 1;
     }
     if (currentValue > 5 ) {
-        currentValue = 5
+        currentValue = 5;
     }
     $(closestInput).val(currentValue + 1);
     var itemId = $(this).data('item_id');
@@ -42,10 +42,10 @@ $('.decrement-qty').click(function(e) {
     var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
     var currentValue = parseInt($(closestInput).val());
     if (currentValue < 1 ) {
-        currentValue = 1
+        currentValue = 1;
     }
     if (currentValue > 5 ) {
-        currentValue = 5
+        currentValue = 5;
     }
     $(closestInput).val(currentValue - 1);
     var itemId = $(this).data('item_id');
