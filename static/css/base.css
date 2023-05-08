@@ -44,7 +44,7 @@
     letter-spacing: 3px;
     text-align: left;
     padding: 5%;
-    color: 	#332C39;
+    color: 	#FFF8D6;
 }
 
 .main-divider {
@@ -125,7 +125,7 @@
 
 /* main button */
 :root {
-    --glow-color: 	hsl(0, 0%, 100%);
+    --glow-color: hsl(50, 100%, 92%)
 }
 
 .glowing-btn {
@@ -196,7 +196,7 @@
   }
   
   .glowing-btn:hover {
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(156, 15, 72, 1);
     text-shadow: none;
     animation: none;
   }
