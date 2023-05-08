@@ -1,8 +1,16 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class Genre(models.Model):
+    """
+    A class to create Genre
+    """
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(
         max_length=254,
@@ -18,6 +26,9 @@ class Genre(models.Model):
 
 
 class Album(models.Model):
+    """
+    A class to create Album
+    """
     genre = models.ForeignKey(
         'Genre',
         null=True,
@@ -50,6 +61,9 @@ class Album(models.Model):
 
 
 class Track(models.Model):
+    """
+    A class to create Tracks list items
+    """
     album = models.ForeignKey(
         Album,
         on_delete=models.CASCADE,

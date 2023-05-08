@@ -1,15 +1,24 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-
+# Internal:
 from .models import Album, Genre
 from .forms import AlbumForm
 from wishlist.models import Wishlist
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 def all_products(request):
+    """
+    A function to provide all products list,
+    provide sorting and searching,
+    pass wishlist
+    """
     albums = Album.objects.all()
     query = None
     genre = None
@@ -66,6 +75,10 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
+    """
+    A fucntion to render product details page,
+    handle wishlist functionality
+    """
     album = get_object_or_404(Album, pk=product_id)
     user = request.user
     in_wishlist = False
@@ -88,7 +101,9 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
-    """ Add a product to the store """
+    """
+    A function to add a product to the store
+    """
     if not request.user.is_superuser:
         messages.error(request, 'How dare you? Only store owners can do that.')
         return redirect(reverse('home'))
@@ -114,7 +129,9 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ Edit a product in the store """
+    """
+    A function to edit a product in the store
+    """
     if not request.user.is_superuser:
         messages.error(request, 'How dare you? Only store owners can do that.')
         return redirect(reverse('home'))
@@ -144,7 +161,9 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ Delete a product from the store """
+    """
+    A function to delete a product from the store
+    """
     if not request.user.is_superuser:
         messages.error(request, 'How dare you? Only store owners can do that.')
         return redirect(reverse('home'))

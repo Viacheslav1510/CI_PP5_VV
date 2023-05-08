@@ -1,9 +1,17 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.contrib import admin
-from .models import Album, Genre, Track
 from django_summernote.admin import SummernoteModelAdmin
+# Internal:
+from .models import Album, Genre, Track
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class AlbumAdmin(SummernoteModelAdmin):
+    """
+    A class to register Album model in admin panel
+    """
     list_display = (
         'genre',
         'name',
@@ -16,6 +24,9 @@ class AlbumAdmin(SummernoteModelAdmin):
 
 
 class GenreAdmin(admin.ModelAdmin):
+    """
+    A class to register Genre model in admin panel
+    """
     list_display = (
         'name',
         'friendly_name',
@@ -23,6 +34,9 @@ class GenreAdmin(admin.ModelAdmin):
 
 
 class TrackAdmin(admin.ModelAdmin):
+    """
+    A class to register Track model in admin panel
+    """
     list_display = (
         'album',
         'name',

@@ -1,9 +1,16 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django import forms
+# Internal:
 from .models import Album, Genre
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class AlbumForm(forms.ModelForm):
-
+    """
+    A class to create Album model form
+    """
     class Meta:
         model = Album
         fields = '__all__'
