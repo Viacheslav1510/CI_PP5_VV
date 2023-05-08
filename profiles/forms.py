@@ -1,9 +1,16 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django import forms
-
+# Internal:
 from .models import UserProfile
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    A class to create profile form
+    """
     class Meta:
         model = UserProfile
         exclude = ('user',)

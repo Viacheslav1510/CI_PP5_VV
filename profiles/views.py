@@ -1,15 +1,22 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
+# Internal:
 from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 @login_required
 def profile(request):
-
+    """
+    A function to render profile page,
+    provide UserProfile form to update profile information
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -34,6 +41,9 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """
+    A function to send order information for profile page
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
