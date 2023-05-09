@@ -1,4 +1,4 @@
-# eCommerce: Teetime
+## eCommerce: The Vinyl Vault
 
 ![Am I Responsive](docs/am-i-responsive.png)
 
@@ -8,19 +8,24 @@
 (Ctrl + click to open in new tab)
 
 ## Table of Contents
-- [eCommerce: Teetime](#ecommerce-teetime)
-  - [Table of Contents](#table-of-contents)
-  - [Business Plan](#business-plan)
-    - [Executive Summary:](#executive-summary)
-    - [Market Analysis:](#market-analysis)
-    - [Marketing and Sales Strategy:](#marketing-and-sales-strategy)
-    - [Operations and Management:](#operations-and-management)
-    - [Financial Plan:](#financial-plan)
-    - [Conclusion:](#conclusion)
-  - [Marketing](#marketing)
-    - [Blog](#blog)
-    - [Social Media](#social-media)
-    - [Mailing List](#mailing-list)
+- [eCommerce: The Vinyl Vault](#ecommerce-the-vinyl-vault)
+- [Table of Contents](#table-of-contents)
+- [Business Plan](#business-plan)
+  - [Executive Summary:](#executive-summary)
+  - [Market Analysis:](#market-analysis)
+  - [Marketing and Sales Strategy:](#marketing-and-sales-strategy)
+  - [Operations and Management:](#operations-and-management)
+  - [Financial Plan:](#financial-plan)
+  - [Conclusion:](#conclusion)
+- [Marketing](#marketing)
+  - [Blog](#blog)
+  - [Social Media](#social-media)
+  - [Mailing List](#mailing-list)
+- [Goals](#goals)
+  - [User Goals](#user-goals)
+- [Site Owner Goals](#site-owner-goals)
+      - [Back to top](#back-to-top)
+- [User Stories](#user-stories)
 
 <hr>
 
@@ -75,3 +80,57 @@ The Vinyl Vault uses Mailchimp to manage its mailing list. By joining the mailin
 
 ![Mailchimp](docs/subscribe.png)
 </details>
+
+## Goals
+
+### User Goals
+
+- Create a user-friendly purchasing experience to generate profits through online sales of albums ranging from the latest releases.
+- To access the latest news and the most popular artists of music industry through the blog.
+- Track user orders to have access to order information.
+- To contact The Vinyl Vault website team with any queastions or support needs through the contact page.
+
+## Site Owner Goals
+
+- Generate revenue through the sale of products in the ecommerce shop and the sale of software to golf clubs and societies
+- Give access to a wide selection of music genres and artists.
+- Establish The Vinyl Vault as loyal customer base and generate significant profits through album sales.
+- Develop quickly and capture a significant part of the untapped market and in the future enter the international market of the music industry.
+
+
+##### Back to [top](#table-of-contents)
+<hr>
+
+## User Stories
+
+| User Story ID                  | As A/AN             | I CAN...                                                | SO THAT...                                          |
+|--------------------------------|---------------------|---------------------------------------------------------|-----------------------------------------------------------|
+| Core Site Functionality ||||
+| 1 | First time user | see a website description | should help me understand what the site is about |
+| 2 | Shopper / Site User | navigate across the site | I can move to each feature of the site easily |
+| 3 | Shopper / Site User | look at footer | I can see contact information, social links and website info |
+| 4 | Shopper / Site User | look at blog | provides me with regular updates through published posts |
+| Viewing and navigation ||||
+| 5 | Shopper / Site User | view a list of products | I can select some to purchase |
+| 6 | Shopper / Site User | view individual product details | I can identify the price, description, rating and add to item to wishlist |
+| 7 | Shopper / Site User | see list of album tracks | I can view all the interested me tracks |
+| 8 | Shopper / Site User | add to wishlist some products | I can come back to wishlist and buy interested products |
+| 9 | Shopper / Site User | be interested in previous shopper experience | I can choose a product according to the best reviews |
+| 10 | Shopper / Site User | add products to bag | I can review my items before I buy them |
+| 11 | Shopper / Site User | see my orders  | I can track the progress of all my orders  |
+| 12 | Shopper / Site User | can write a message to site owner | I can get in touch with website team |
+| Registration and User Accounts||||
+| 13 | Shopper / Site User | easily register for an account | I have personal account and be able to view my profile |
+| 14 | Shopper / Site User | login and logout | I can access my personal account information |
+| 15 | Shopper / Site User | register by my social media | I can easier login to website |
+| Sorting and searching ||||
+| 16 | Shopper / Site User | search for album | I can find specific product I would like to purchase |
+| 17 | Shopper / Site User | sort the list of available products | I can identify the best rated, best priced and categorically sorted |
+| 18 | Shopper / Site User | sort albums by genre | I can select products of a certain genre |
+| Sorting and searching ||||
+| 19 | Shopper / Site User | use a card as the payment method  | I can purchase the product online |
+| 20 | Shopper / Site User | have a profile  | I can store my information for faster checkouts |
+| 21 | Shopper / Site User | pay for product  | I can complete the payment through secure checkout |
+| 22 | Shopper / Site User | receive an email confirmation after checkout | I can keep confirmation of what I've purchased |
+| Admin functionality ||||
+| 22 | Admin | add, edit or delete products | I can change products criteria and delete products |
