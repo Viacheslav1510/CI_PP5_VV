@@ -1,108 +1,77 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# eCommerce: Teetime
 
-Welcome slava_kyiv,
+![Am I Responsive](docs/am-i-responsive.png)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+**Developer: Slava Kondriianenko**
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+💻 [Visit live website](https://ci-tvv-pp5.herokuapp.com/)
+(Ctrl + click to open in new tab)
 
-## Gitpod Reminders
+## Table of Contents
+- [eCommerce: Teetime](#ecommerce-teetime)
+  - [Table of Contents](#table-of-contents)
+  - [Business Plan](#business-plan)
+    - [Executive Summary:](#executive-summary)
+    - [Market Analysis:](#market-analysis)
+    - [Marketing and Sales Strategy:](#marketing-and-sales-strategy)
+    - [Operations and Management:](#operations-and-management)
+    - [Financial Plan:](#financial-plan)
+    - [Conclusion:](#conclusion)
+  - [Marketing](#marketing)
+    - [Blog](#blog)
+    - [Social Media](#social-media)
+    - [Mailing List](#mailing-list)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+<hr>
 
-`python3 -m http.server`
+## Business Plan
 
-A blue button should appear to click: _Make Public_,
+### Executive Summary:
 
-Another blue button should appear to click: _Open Browser_.
+The online music albums shop "The Vinyl Vault" plans to offer hundreds of thousands of music albums to Irish customers who are looking for the convenience of purchasing music online. With the advent of digital music, consumers’ preferences have shifted from traditional methods of purchasing music to digital formats that offer easy accessibility, convenience, and a large array of options. The online music albums shop "The Vinyl Vault" is determined to meet these expectations and generate profits through online sales of albums ranging from the latest releases to timeless classics. The business plans to operate throughout Ireland with a customer-oriented approach and effective digital marketing.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Market Analysis:
 
-A blue button should appear to click: _Make Public_,
+The online music industry in Ireland has seen rapid growth in the past few years due to increasing internet penetration rates and the increasing popularity of digital music. The global digital music market is expected to grow at a CAGR of 15% from 2021 to 2026. The Irish market for online music is small but growing, providing ample opportunities for "The Vinyl Vault" to establish its presence and grow its market share. The competition in the Irish market is moderate, with a few established players competing for market share. By offering competitive pricing, a broader range of options, and a user-friendly platform, MusicHub aims to gain market share and differentiate itself.
 
-Another blue button should appear to click: _Open Browser_.
+### Marketing and Sales Strategy:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+"The Vinyl Vault" promotion strategy aims to create customer awareness and increase sales. In conjunction with promotional campaigns such as online advertising, social media marketing, and email campaigns, the business will rely on Search Engine Optimization (SEO) and targeted digital media advertisements to drive traffic to the website. In addition to digital marketing, MusicHub will employ other marketing tactics such as partnerships with local musicians and selling gift cards to clients. Providing quality customer service, offering personalized recommendations and easy payment options will contribute to "The Vinyl Vault's" competitive advantage.
 
-To log into the Heroku toolbelt CLI:
+### Operations and Management:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+The day-to-day operations of "The Vinyl Vault's" will include sourcing and uploading albums, order processing and shipping, and customer data management. In addition, the business will employ experienced staff to handle customer service, sales, and marketing. In terms of supply chain management, "The Vinyl Vault's" will work with local and international vendors to source quality music albums, with a focus on delivering products securely and promptly to customers.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Financial Plan:
 
-------
+The Vinyl Vault's financial plan is predicated on generating revenue through online album sales. The financial model assumes a 10% year-on-year growth rate in revenue, relies on a minimum 40% gross profit margin while keeping overheads low through the utilization of outsourced delivery services, and a focus on digital marketing. The profit margins are expected to continue expanding with the scale. The following assumptions were made for the financial model, including upfront fixed costs for delivery contracts and ongoing operational costs for website maintenance and stocking:
 
-## Release History
+- Capital: €50,000
+- Revenue: €300,000 in Year 1
+- Gross Profit Margin: 40%
+- Average Fixed Cost: €30,000 per year
+- Average Variable Cost: €12,000 per year
+- Net Profit: €48,000 in Year 1
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Conclusion:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+The Vinyl Vault aims to become the leading player in the Irish online music album market. By creating a convenient shopping environment and paying special attention to customer service, MusicHub will build a loyal customer base and generate significant profits from album sales. Thanks to a comprehensive marketing strategy and effective operations, the business will develop quickly and capture a significant part of the untapped market and in the future may enter the international market of the music industry.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Marketing
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Blog
+The Vinyl Vault provides a blog that will increase the site's audience interested in the music industry. The blog provides an opportunity to attract buyers of the site's music albums and thereby increase sales.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Social Media
+The web app "The Vinyl Vault" has a presence on Facebook. The Facebook page serves as a platform to promote upcoming events, post updates on the latest features, and share user-generated content. The Instagram page is under development and will focus on showcasing music venues, highlighting new albums in the shop, and providing a behind-the-scenes look at the company. These social media accounts allow users to stay informed and connected with "The Vinyl Vault" community.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+[Facebook](https://www.facebook.com/profile.php?id=100092395216693)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Mailing List
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+The Vinyl Vault uses Mailchimp to manage its mailing list. By joining the mailing list, users will receive exclusive discounts and deals, upcoming events, and the latest offers. The customer also could collect gift cards by mail that can be used to purchase their favorite albums or sent as gifts. The process to join the mailing list is simple, users just need to provide their email address on the website, and they will start receiving email updates. Mailchimp allows The Vinyl Vault team to segment the mailing list, personalize emails and track the success of email campaigns.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+<details><summary>See Details</summary>
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+![Mailchimp](docs/subscribe.png)
+</details>
