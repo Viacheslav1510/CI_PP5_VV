@@ -45,6 +45,8 @@
         
         <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
             <ul class="nav">
+                <li class="nav-link genres-container uppercase"><a class="btn btn-outline-light btn-sm p-1"
+                    href="{% url 'products' %}">All Albums</a></li></li>
                 {% for genre in genres_list %}
                 <li class="nav-link genres-container"><a class="btn btn-outline-light btn-sm p-1"
                     href="{% url 'products' %}?genre={{genre.name}}">{{ genre.friendly_name }}</a></li>
