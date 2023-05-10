@@ -57,13 +57,16 @@
                                     <button class="btn btn-outline-secondary btn-number btn-sm decrement-qty"
                                             data-item_id="{{ album.id }}" id="decrement-qty_{{ album.id }}">
                                         <span><i class="fa-solid fa-minus"></i></span>
+                                        decrement
                                     </button>
                                 </span>
+                                <label for="id_qty_{{ album.id }}" hidden="hidden">Hiden</label>
                                 <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="5" data-item_id="{{ album.id }}" id="id_qty_{{ album.id }}">
                                 <span class="input-group-append">
                                     <button class="btn btn-outline-secondary btn-number btn-sm increment-qty"
                                             data-item_id="{{ album.id }}" id="increment-qty_{{ album.id }}">
                                         <span><i class="fa-solid fa-plus"></i></span>
+                                        increment
                                     </button>
                                 </span>
                             </div>

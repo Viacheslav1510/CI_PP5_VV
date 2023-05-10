@@ -27,6 +27,14 @@
     display: inherit;
 }
 
+.add-cart-button {
+    font-size: 0;
+}
+
+.fa-opencart {
+    font-size: 20px;
+}
+
 .custom-select {
     width: 40%;
 }
@@ -113,4 +121,20 @@
 .product-detail-image {
     width: 100%;
     height: 100%;
+}
+
+.decrement-qty {
+    font-size: 0;
+}
+
+.increment-qty {
+    font-size: 0;
+}
+
+.fa-minus {
+    font-size: 15px;
+}
+
+.fa-plus {
+    font-size: 15px;
 }

@@ -44,6 +44,7 @@
   - [Languages \& Frameworks](#languages--frameworks)
   - [Libraries \& Tools](#libraries--tools)
 - [Features](#features)
+- [Validation](#validation)
 
 <hr>
 
@@ -892,6 +893,19 @@ I have used meta keywords that make it possible for people to find my site via s
   - User stories covered: 24
 
 <details><summary>See feature images</summary>
+
+![Delete product](docs/features/delete-product.png)
+</details>
+
+Back to [top](#table-of-contents)
+
+## Validation 
+
+The W3C Markup Validation Service was used to validate the HTML of the website. 
+
+- HOME
+
+<details><summary>index.html</summary>
 
 ![Delete product](docs/features/delete-product.png)
 </details>

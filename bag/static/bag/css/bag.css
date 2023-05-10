@@ -23,3 +23,19 @@
     width: 60px;
     padding: 3px;
 }
+
+.decrement-qty {
+    font-size: 0;
+}
+
+.increment-qty {
+    font-size: 0;
+}
+
+.fa-minus {
+    font-size: 15px;
+}
+
+.fa-plus {
+    font-size: 15px;
+}

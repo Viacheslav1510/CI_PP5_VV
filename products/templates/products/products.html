@@ -77,12 +77,12 @@
                              <div class="product-action-style">
                                 {% if user.is_authenticated %}
                                     {% if album in wished_list %}
-                                    <a href="{% url 'remove_from_wishlist_all' album.id user.id %}"><i class="fa fa-heart text-secondary"></i></a>
+                                    <a href="{% url 'remove_from_wishlist_all' album.id user.id %}" aria-label="add-to-wishlist"><i class="fa fa-heart text-secondary"></i></a>
                                     {% else %}
-                                    <a href="{% url 'add_to_wishlist_all' album.id user.id %}"><i class="fa fa-heart text-danger"></i></a>
+                                    <a href="{% url 'add_to_wishlist_all' album.id user.id %}" aria-label="add-to-wishlist"><i class="fa fa-heart text-danger"></i></a>
                                     {% endif %}
                                 {% else %}
-                                    <a href="{% url 'account_login' %}"><i class="fa fa-heart fa fa-heart text-secondary"></i></a>
+                                    <a href="{% url 'account_login' %}" aria-label="login-link"><i class="fa fa-heart fa fa-heart text-secondary"></i></a>
                                 {% endif %}
                                 {% if album.rating %}
                                     <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ album.rating }} / 5</small>
@@ -95,7 +95,7 @@
                                         <select class="d-none" name="quantity">
                                             <option>1</option>
                                         </select>
-                                        <button class="btn btn-link text-muted" type="submit"><i class="fa-brands fa-opencart"></i></button>
+                                        <button class="btn btn-link text-muted add-cart-button" type="submit"><i class="fa-brands fa-opencart"></i>add</button>
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     </form>
                                 </div>
