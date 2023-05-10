@@ -23,16 +23,27 @@
   - [Mailing List](#mailing-list)
 - [Goals](#goals)
   - [User Goals](#user-goals)
-- [Site Owner Goals](#site-owner-goals)
-      - [Back to top](#back-to-top)
+  - [Site Owner Goals](#site-owner-goals)
+- [Structure](#structure)
+  - [Website pages](#website-pages)
+  - [AWS](#aws)
+  - [Database](#database)
+  - [Models](#models)
 - [User Stories](#user-stories)
   - [Kanban, Epics \& User Stories](#kanban-epics--user-stories)
-      - [Back to top](#back-to-top-1)
 - [Wireframes](#wireframes)
-      - [Back to top](#back-to-top-2)
 - [Design](#design)
   - [Colors](#colors)
   - [Fonts](#fonts)
+- [Structure](#structure-1)
+  - [Website pages](#website-pages-1)
+  - [AWS](#aws-1)
+  - [Database](#database-1)
+  - [Models](#models-1)
+- [Technologies Used](#technologies-used)
+  - [Languages \& Frameworks](#languages--frameworks)
+  - [Libraries \& Tools](#libraries--tools)
+- [Features](#features)
 
 <hr>
 
@@ -97,7 +108,7 @@ The Vinyl Vault uses Mailchimp to manage its mailing list. By joining the mailin
 - Track user orders to have access to order information.
 - To contact The Vinyl Vault website team with any queastions or support needs through the contact page.
 
-## Site Owner Goals
+### Site Owner Goals
 
 - Generate revenue through the sale of products in the ecommerce shop and the sale of software to golf clubs and societies
 - Give access to a wide selection of music genres and artists.
@@ -105,8 +116,189 @@ The Vinyl Vault uses Mailchimp to manage its mailing list. By joining the mailin
 - Develop quickly and capture a significant part of the untapped market and in the future enter the international market of the music industry.
 
 
-##### Back to [top](#table-of-contents)
+Back to [top](#table-of-contents)
+
+## Structure
+
+The site was designed for the user to be familiar with the layout such as a navigation bar along the top of the pages and a hamburger menu button for smaller screen.
+
+The footer contains social media links, all website services, usefull links and business contact information.
+It contains an email sign up form and useful links as well as contact information.
+
+### Website pages
+
+The site consists of the following pages:
+
+- Home
+- Products list(shop)
+- Product details
+- Blog
+- Post expanded
+- Contact page
+- Register
+- Login
+- Logout
+- Profile
+- Wishlist
+- Bag
+- Checkout
+- Checkout success
+
+Back to [top](#table-of-contents)
+
+### AWS
+
+AWS S3 bucket was chosen to store website static and media data. It's a reliable, scalable, and inexpensive cloud computing service. This service allows to easily store static and media files and provides protection for my data.
+
+<details><summary>See AWS Image</summary>
+
+![aws bucket](docs/aws.png)
+</details>
+
+### Database
+
+
+
+### Models
+
 <hr>
+User Model
+
+| Key        | Name         | Type        |
+| ---------- | ------------ | ----------- |
+| PrimaryKey | user_id      | AutoField   |
+|            | password     | VARCHAR(45) |
+|            | last_login   | VARCHAR(45) |
+|            | is_superuser | BOOLEAN     |
+|            | username     | VARCHAR(45) |
+|            | first_name   | VARCHAR(45) |
+|            | last_name    | VARCHAR(45) |
+|            | email        | VARCHAR(45) |
+|            | is_staff     | BOOLEAN     |
+|            | is_active    | BOOLEAN     |
+|            | date_joined  | VARCHAR(45) |
+
+<hr>
+User Profile Model
+
+| Key        | Name                 | Type          |
+| ---------- | -------------------- | ------------- |
+| PrimaryKey | user_profile_id      | AutoField     |
+| ForeignKey | user                 | User model    |
+|            | default_phone_number | CharField[20] |
+|            | default_address1     | CharField[80] |
+|            | default_address2     | CharField[80] |
+|            | default_town_city    | CharField[40] |
+|            | default_county       | CharField[80] |
+|            | default_postcode     | CharField[20] |
+|            | default_country      | CharField[40] |
+
+<hr>
+Genre Model
+
+| Key        | Name          | Type      |
+| ---------- | ------------- | --------- |
+| PrimaryKey | genre_id      | AutoField |
+|            | name          | Char[254] |
+|            | friendly_name | Char[254] |
+
+<hr>
+Album Model
+
+| Key        | Name        | Type           |
+| ---------- | ----------- | -------------- |
+| PrimaryKey | album_id    | AutoField      |
+| ForeignKey | genre       | Genre model    |
+|            | sku         | CharField[50]  |
+|            | name        | CharField[254] |
+|            | description | TextField      |
+|            | price       | DecimalField   |
+|            | rating      | DecimalField   |
+|            | image       | ImageField     |
+
+<hr>
+Track Model
+
+| Key        | Name        | Type                |
+| ---------- | ----------- | --------------      |
+| PrimaryKey | track_id    | AutoField           |
+|            | name        | CharField[100]      |
+|            | track_number| PositiveIntegerField|
+|            | length      | DecimalField        |
+| ForeignKey | album       | Album model         |
+|            | artist      | CharField[100]      |
+
+<hr>
+Wishlist Model
+
+| Key        | Name        | Type                |
+| ---------- | ----------- | --------------      |
+| PrimaryKey | track_id    | AutoField           |
+| ForeignKey | product     | Album model         |
+| ForeignKey | user        | User model         |
+
+<hr>
+Post Model
+
+| Key        | Name           | Type           |
+| ---------- | -----------    | -------------- |
+| PrimaryKey | post_id        | AutoField      |
+|            | title          | CharField[100] |
+|            | content        | TextField      |
+|            | excerpt        | TextField      |
+|            | featured_image | ImageField     |
+|            | image          | DateTimeField  |
+
+<hr>
+Contact Model
+
+| Key        | Name        | Type             |
+| ---------- | ----------- | --------------   |
+| PrimaryKey | message_id  | AutoField        |
+|            | created_date| DateTimeField    |
+| ForeignKey | user        | User Modeld      |
+|            | name        | CharField[50]    |
+|            | email       | EmailField       |
+|            | phone       | PhoneNumberField |
+|            | message     | TextField        |
+
+<hr>
+Order Model
+
+| Key        | Name            | Type               |
+| ---------- | --------------- | ------------------ |
+| PrimaryKey | order_id        | AutoField          |
+|            | order_number    | CharField[40]      |
+| ForeignKey | user_profile    | User profile Model |
+|            | full_name       | CharField[50]      |
+|            | email           | EmailField[254]    |
+|            | phone_number    | CharField[20]      |
+|            | address1        | CharField[80]      |
+|            | address2        | CharField[80]      |
+|            | town_city       | CharField[40]      |
+|            | postcode        | CharField[20]      |
+|            | county          | CharField[80]      |
+|            | country         | CharField[40]      |
+|            | date            | DateTimeField      |
+|            | delivery_cost   | DecimalField[6]    |
+|            | order_total     | DecimalField[10]   |
+|            | grand_total     | DecimalField[10]   |
+|            | original_bag    | TextField          |
+|            | stripe_pid      | CharField          |
+
+<hr>
+OrderLineItem Model
+
+| Key        | Name             | Type            |
+| ---------- | ---------------- | --------------- |
+| PrimaryKey | OrderLineItem_id | AutoField       |
+| ForeignKey | order            | Order Model     |
+| ForeignKey | product          | Album Model     |
+|            | quantity         | IntegerField    |
+|            | line_item_total  | DecimalField[6] |
+
+Back to [top](#table-of-contents)
+
 
 ## User Stories
 
@@ -126,25 +318,26 @@ The Vinyl Vault uses Mailchimp to manage its mailing list. By joining the mailin
 | 10 | Shopper / Site User | add products to bag | I can review my items before I buy them |
 | 11 | Shopper / Site User | see my orders  | I can track the progress of all my orders  |
 | 12 | Shopper / Site User | can write a message to site owner | I can get in touch with website team |
+| 13 | Shopper / Site User | be notified of my actions | I can be aware the action was completed successfully or not |
 | Registration and User Accounts||||
-| 13 | Shopper / Site User | easily register for an account | I have personal account and be able to view my profile |
-| 14 | Shopper / Site User | login and logout | I can access my personal account information |
-| 15 | Shopper / Site User | register by my social media | I can easier login to website |
+| 14 | Shopper / Site User | easily register for an account | I have personal account and be able to view my profile |
+| 15 | Shopper / Site User | login and logout | I can access my personal account information |
+| 16 | Shopper / Site User | register by my social media | I can easier login to website |
 | Sorting and searching ||||
-| 16 | Shopper / Site User | search for album | I can find specific product I would like to purchase |
-| 17 | Shopper / Site User | sort the list of available products | I can identify the best rated, best priced and categorically sorted |
-| 18 | Shopper / Site User | sort albums by genre | I can select products of a certain genre |
-| Sorting and searching ||||
-| 19 | Shopper / Site User | use a card as the payment method  | I can purchase the product online |
-| 20 | Shopper / Site User | have a profile  | I can store my information for faster checkouts |
-| 21 | Shopper / Site User | pay for product  | I can complete the payment through secure checkout |
-| 22 | Shopper / Site User | receive an email confirmation after checkout | I can keep confirmation of what I've purchased |
+| 17 | Shopper / Site User | search for album | I can find specific product I would like to purchase |
+| 18 | Shopper / Site User | sort the list of available products | I can identify the best rated, best priced and categorically sorted |
+| 19 | Shopper / Site User | sort albums by genre | I can select products of a certain genre |
+| Purchasing and Checkout ||||
+| 20 | Shopper / Site User | use a card as the payment method  | I can purchase the product online |
+| 21 | Shopper / Site User | have a profile  | I can store my information for faster checkouts |
+| 22 | Shopper / Site User | pay for product  | I can complete the payment through secure checkout |
+| 23 | Shopper / Site User | receive an email confirmation after checkout | I can keep confirmation of what I've purchased |
 | Admin functionality ||||
-| 23 | Admin | add, edit or delete products | I can change products criteria and delete products |
-| 24 | Admin |  add blog posts |  I can provide latest information for my customers |
-
+| 24 | Admin | add, edit or delete products | I can change products criteria and delete products |
+| 25 | Admin |  add blog posts |  I can provide latest information for my customers |
 
 ### Kanban, Epics & User Stories
+
 - GitHub Kanban was used to track all open user stories
 - Epics were created using the milestones feature
 - Backlog, In Progress, Done headings were used in the kanban
@@ -198,7 +391,7 @@ The Vinyl Vault uses Mailchimp to manage its mailing list. By joining the mailin
 </details>
 
 
-##### Back to [top](#table-of-contents)<hr>
+Back to [top](#table-of-contents)<hr>
 
 ## Wireframes
 Balsamiq was used to create wireframes for this project. It's a user-friendly wireframing tool that enables me to quickly and easily create mockups for my website or application. It offers a wide range of pre-built UI elements, and allows to easy create styled wireframes. I left the photo below so you can see website layout, check the flow and design.
@@ -249,7 +442,7 @@ Balsamiq was used to create wireframes for this project. It's a user-friendly wi
 </details>
 
 
-##### Back to [top](#table-of-contents)<hr>
+Back to [top](#table-of-contents)<hr>
 
 ## Design
 
@@ -272,3 +465,433 @@ The font was selected from Google Fonts, Gelasio. This font offers great readabi
 ![Font Image](docs/font.png)
 </details>
 <hr>
+
+## Structure
+
+The site was designed for the user to be familiar with the layout such as a navigation bar along the top of the pages and a hamburger menu button for smaller screen.
+
+The footer contains social media links, all website services, usefull links and business contact information.
+It contains an email sign up form and useful links as well as contact information.
+
+### Website pages
+
+The site consists of the following pages:
+
+- Home
+- Products list(shop)
+- Product details
+- Blog
+- Post expanded
+- Contact page
+- Register
+- Login
+- Logout
+- Profile
+- Wishlist
+- Bag
+- Checkout
+- Checkout success
+
+Back to [top](#table-of-contents)
+
+### AWS
+
+AWS S3 bucket was chosen to store website static and media data. It's a reliable, scalable, and inexpensive cloud computing service. This service allows to easily store static and media files and provides protection for my data.
+
+<details><summary>See AWS Image</summary>
+
+![aws bucket](docs/aws.png)
+</details>
+
+### Database
+
+### Models
+
+User Model
+
+| Key        | Name         | Type        |
+| ---------- | ------------ | ----------- |
+| PrimaryKey | user_id      | AutoField   |
+|            | password     | VARCHAR(45) |
+|            | last_login   | VARCHAR(45) |
+|            | is_superuser | BOOLEAN     |
+|            | username     | VARCHAR(45) |
+|            | first_name   | VARCHAR(45) |
+|            | last_name    | VARCHAR(45) |
+|            | email        | VARCHAR(45) |
+|            | is_staff     | BOOLEAN     |
+|            | is_active    | BOOLEAN     |
+|            | date_joined  | VARCHAR(45) |
+
+User Profile Model
+
+| Key        | Name                 | Type          |
+| ---------- | -------------------- | ------------- |
+| PrimaryKey | user_profile_id      | AutoField     |
+| ForeignKey | user                 | User model    |
+|            | default_phone_number | CharField[20] |
+|            | default_address1     | CharField[80] |
+|            | default_address2     | CharField[80] |
+|            | default_town_city    | CharField[40] |
+|            | default_county       | CharField[80] |
+|            | default_postcode     | CharField[20] |
+|            | default_country      | CharField[40] |
+
+Genre Model
+
+| Key        | Name          | Type      |
+| ---------- | ------------- | --------- |
+| PrimaryKey | genre_id      | AutoField |
+|            | name          | Char[254] |
+|            | friendly_name | Char[254] |
+
+Album Model
+
+| Key        | Name        | Type           |
+| ---------- | ----------- | -------------- |
+| PrimaryKey | album_id    | AutoField      |
+| ForeignKey | genre       | Genre model    |
+|            | sku         | CharField[50]  |
+|            | name        | CharField[254] |
+|            | description | TextField      |
+|            | price       | DecimalField   |
+|            | rating      | DecimalField   |
+|            | image       | ImageField     |
+
+Track Model
+
+| Key        | Name        | Type                |
+| ---------- | ----------- | --------------      |
+| PrimaryKey | track_id    | AutoField           |
+|            | name        | CharField[100]      |
+|            | track_number| PositiveIntegerField|
+|            | length      | DecimalField        |
+| ForeignKey | album       | Album model         |
+|            | artist      | CharField[100]      |
+
+Wishlist Model
+
+| Key        | Name        | Type                |
+| ---------- | ----------- | --------------      |
+| PrimaryKey | track_id    | AutoField           |
+| ForeignKey | product     | Album model         |
+| ForeignKey | user        | User model         |
+
+
+
+Post Model
+
+| Key        | Name           | Type           |
+| ---------- | -----------    | -------------- |
+| PrimaryKey | post_id        | AutoField      |
+|            | title          | CharField[100] |
+|            | content        | TextField      |
+|            | excerpt        | TextField      |
+|            | featured_image | ImageField     |
+|            | image          | DateTimeField  |
+
+Contact Model
+
+| Key        | Name        | Type             |
+| ---------- | ----------- | --------------   |
+| PrimaryKey | message_id  | AutoField        |
+|            | created_date| DateTimeField    |
+| ForeignKey | user        | User Modeld      |
+|            | name        | CharField[50]    |
+|            | email       | EmailField       |
+|            | phone       | PhoneNumberField |
+|            | message     | TextField        |
+
+Order Model
+
+| Key        | Name            | Type               |
+| ---------- | --------------- | ------------------ |
+| PrimaryKey | order_id        | AutoField          |
+|            | order_number    | CharField[40]      |
+| ForeignKey | user_profile    | User profile Model |
+|            | full_name       | CharField[50]      |
+|            | email           | EmailField[254]    |
+|            | phone_number    | CharField[20]      |
+|            | address1        | CharField[80]      |
+|            | address2        | CharField[80]      |
+|            | town_city       | CharField[40]      |
+|            | postcode        | CharField[20]      |
+|            | county          | CharField[80]      |
+|            | country         | CharField[40]      |
+|            | date            | DateTimeField      |
+|            | delivery_cost   | DecimalField[6]    |
+|            | order_total     | DecimalField[10]   |
+|            | grand_total     | DecimalField[10]   |
+|            | original_bag    | TextField          |
+|            | stripe_pid      | CharField          |
+
+OrderLineItem Model
+
+| Key        | Name             | Type            |
+| ---------- | ---------------- | --------------- |
+| PrimaryKey | OrderLineItem_id | AutoField       |
+| ForeignKey | order            | Order Model     |
+| ForeignKey | product          | Album Model     |
+|            | quantity         | IntegerField    |
+|            | line_item_total  | DecimalField[6] |
+
+
+Back to [top](#table-of-contents)
+
+## Technologies Used
+
+### Languages & Frameworks
+
+- HTML
+- CSS
+- Bootstrap
+- Javascript
+- jQuery
+- Python
+- Django
+
+### Libraries & Tools
+
+- [Am I Responsive](http://ami.responsivedesign.is/)
+- [Balsamiq](https://balsamiq.com/)
+- [Bootstrap v4.6](https://getbootstrap.com/)
+- [Favicon.io](https://favicon.io)
+- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/)
+- [Font Awesome](https://fontawesome.com/)
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
+- [Color Hunt](https://colorhunt.co/)
+- [Google Fonts](https://fonts.google.com/)
+- [Heroku Platform](https://id.heroku.com/login)
+- [AWS](https://aws.amazon.com/)
+- [jQuery](https://jquery.com)
+- [Postgres](https://www.postgresql.org/)
+- [Summernote](https://summernote.org/)
+- Validation:
+  - [WC3 Validator](https://validator.w3.org/)
+  - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)
+  - [JShint](https://jshint.com/)
+  - [CI Python Liner(PEP8)](https://pep8ci.herokuapp.com/)
+  - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+  - [Wave Validator](https://wave.webaim.org/)
+
+## Features
+
+- Search Engine Optimisation (SEO)
+
+I have used meta keywords that make it possible for people to find my site via search engines. Keywords are ideas and topics that define what my website content is about.
+
+<details><summary>See feature image</summary>
+
+![SEO](docs/features/meta-keywords.png)
+</details>
+
+- Home page
+  - Home page includes nav bar, main text(website description), main website image and a footer with website information.
+  - User stories covered: 1, 2, 3.
+
+<details><summary>See feature images</summary>
+
+![Home page](docs/features/home-1.png)
+![Home page](docs/features/home-2.png)
+</details>
+
+- Navigation
+  - Navbar includes links to all products, blog page, contact page, bag, profile page, and wishlist
+  - Navbar has search field for products searching
+  - Indicates login/logout and register in status.
+  - Fully Responsive.
+  - On small screens switches to hamburger menu.
+  - Displayed on all pages
+  - User stories covered: 2, 16.
+
+<details><summary>See feature images</summary>
+
+![Navigation](docs/features/navigation.png)
+</details>
+
+
+- Footer
+  - Footer contains social media links, all website services, usefull links, privacy policy and business contact information.
+  - Includes Mailchimp signup for email mailing list.
+  - Displayed on all pages.
+  - User stories covered: 3.
+
+<details><summary>See feature images</summary>
+
+![Footer](docs/features/footer.png)
+</details>
+
+- Sign up / Register
+  - Allow users to register an account.
+  - User stories covered: 13
+
+<details><summary>See feature image</summary>
+
+![Register](docs/features/register.png)
+</details>
+
+- Sign In
+  - User can sign in.
+  - User stories covered: 14
+
+<details><summary>See feature images</summary>
+
+![Sign in](docs/features/sign-in.png)
+</details>
+
+
+- Sign Out
+  - Allows the user to securely sign out.
+  - Ask user if they are sure they want to sign out.
+  - User stories covered: 15
+
+<details><summary>See feature image</summary>
+
+![Sign out](docs/features/logout.png)
+</details>
+
+- Products list page
+  - Products list page contains all products cards, free delivery information, sorting field, buttons to sort by album genre.
+  - User allowed to add each product to bag or put it in wishlist.
+  - User stories covered: 5, 8, 10, 16, 17, 18.
+
+<details><summary>See feature images</summary>
+
+![Products list](docs/features/all-products.png)
+</details>
+
+- Products details
+  - Products details page contains album image, album description, quantity input, add to bag button.
+  - Page provides add to wishlist button and album tracklist.
+  - User allowed to add album to wishlist or remove accordingly.
+  - User stories covered: 6, 7, 8, 10,
+
+<details><summary>See feature images</summary>
+
+![Products details](docs/features/product-details.png)
+</details>
+
+- Blog page
+
+  - Blog page contains posts cards with images and post title on each card.
+  - Blog page includes pagination for 6 posts on the page
+  - User stories covered: 4.
+
+<details><summary>See feature images</summary>
+
+![Blog page](docs/features/blog.png)
+</details>
+
+- Post details page
+
+  - Post details page provides post content.
+  - User stories covered: 4.
+
+<details><summary>See feature images</summary>
+
+![Post details](docs/features/post-details-1.png)
+![Post details](docs/features/post-details-2.png)
+</details>
+
+- Contact page
+
+  - Contact page contains message form, contact information and google map with mark on it for the business.
+  - Only loged in users can send a message to website owner.
+  - User stories covered: 12.
+
+<details><summary>See feature images</summary>
+
+![Contact](docs/features/contact.png)
+</details>
+
+- Wishlist
+
+  - Allows user to add favourite items to wished list
+  - User can delete item from wishlist or add it to bag
+  - Wishlist works on all products page and in product details
+  - User stories covered: 8.
+
+<details><summary>See feature images</summary>
+
+![Wishlist](docs/features/wishlist.png)
+![Wishlist](docs/features/wishlist-1.png)
+</details>
+
+- Profile 
+  - Allows the user to update their information and see their order history.
+  - User stories covered: 11, 14, 21
+
+<details><summary>See feature images</summary>
+
+![Profile](docs/features/profile.png)
+</details>
+
+- Bag
+  - Contains all products which user selected to buy
+  - User can change item quantity
+  - User can go to secure checkout page by clik on button
+  - User stories covered: 10.
+
+<details><summary>See feature images</summary>
+
+![Bag](docs/features/bag.png)
+</details>
+
+- Checkout
+  - Allows the user to purchase items in their basket.
+  - User stories covered: 20, 22
+
+<details><summary>See feature images</summary>
+
+![Checkout](docs/features/checkout.png)
+</details>
+
+- Stripe
+  - Allows the user to use stripe for card payments.
+  - User stories covered: 22
+
+<details><summary>See feature images</summary>
+
+![Stripe](docs/features/stripe.png)
+</details>
+
+- Email Confirmation
+  - Allows the user to receive an email confirmation for their order.
+  - User stories covered: 23
+
+- Notifications container
+  - Allows the user to see relevant notifications.
+  - User stories covered: 13
+
+<details><summary>See feature images</summary>
+
+![Email confirm](docs/features/email-confirmation.png)
+</details>
+
+- Add Product
+  - Allows the Admin to add new products.
+  - User stories covered: 24
+
+<details><summary>See feature images</summary>
+
+![Add product](docs/features/add-product.png)
+</details>
+
+- Edit Product
+  - Allows the user to edit the products.
+  - User stories covered: 24
+
+<details><summary>See feature images</summary>
+
+![Edit product](docs/features/edit-product.png)
+</details>
+
+- Delete Product
+  - Allows the user to delete products, includes confirmation prompt before deletion.
+  - User stories covered: 24
+
+<details><summary>See feature images</summary>
+
+![Delete product](docs/features/delete-product.png)
+</details>
