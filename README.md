@@ -26,6 +26,13 @@
 - [Site Owner Goals](#site-owner-goals)
       - [Back to top](#back-to-top)
 - [User Stories](#user-stories)
+  - [Kanban, Epics \& User Stories](#kanban-epics--user-stories)
+      - [Back to top](#back-to-top-1)
+- [Wireframes](#wireframes)
+      - [Back to top](#back-to-top-2)
+- [Design](#design)
+  - [Colors](#colors)
+  - [Fonts](#fonts)
 
 <hr>
 
@@ -133,4 +140,135 @@ The Vinyl Vault uses Mailchimp to manage its mailing list. By joining the mailin
 | 21 | Shopper / Site User | pay for product  | I can complete the payment through secure checkout |
 | 22 | Shopper / Site User | receive an email confirmation after checkout | I can keep confirmation of what I've purchased |
 | Admin functionality ||||
-| 22 | Admin | add, edit or delete products | I can change products criteria and delete products |
+| 23 | Admin | add, edit or delete products | I can change products criteria and delete products |
+| 24 | Admin |  add blog posts |  I can provide latest information for my customers |
+
+
+### Kanban, Epics & User Stories
+- GitHub Kanban was used to track all open user stories
+- Epics were created using the milestones feature
+- Backlog, In Progress, Done headings were used in the kanban
+
+<details><summary>Epic Overview</summary>
+
+![Epics](docs/agile/epics.png)
+</details>
+
+<details><summary>Epic 1</summary>
+
+![Epic 1](docs/agile/epic-1.png)
+</details>
+
+<details><summary>Epic 2</summary>
+
+![Epic 2](docs/agile/epic-2.png)
+</details>
+
+<details><summary>Epic 3</summary>
+
+![Epic 3](docs/agile/epic-3.png)
+</details>
+
+<details><summary>Epic 4</summary>
+
+![Epic 4](docs/agile/epic-4.png)
+</details>
+
+<details><summary>Epic 5</summary>
+
+![Epic 5](docs/agile/epic-5.png)
+</details>
+
+<details><summary>Epic 6</summary>
+
+![Epic 6](docs/agile/epic-6.png)
+</details>
+
+<details><summary>User Stories</summary>
+
+![User stories](docs/agile/us-1.png)
+![User stories](docs/agile/us-2.png)
+
+</details>
+
+<details><summary>Kanban</summary>
+
+![Kanban End](docs/agile/kanban.png)
+
+</details>
+
+
+##### Back to [top](#table-of-contents)<hr>
+
+## Wireframes
+Balsamiq was used to create wireframes for this project. It's a user-friendly wireframing tool that enables me to quickly and easily create mockups for my website or application. It offers a wide range of pre-built UI elements, and allows to easy create styled wireframes. I left the photo below so you can see website layout, check the flow and design.
+
+<details><summary>Wireframe Home</summary>
+
+![Home](docs/wireframes/home-1.png)
+</details>
+
+<details><summary>Wireframe Products Page</summary>
+
+![Products](docs/wireframes/products-1.png)
+</details>
+
+<details><summary>Wireframe Product Details Page</summary>
+
+![Product Details](docs/wireframes/product-details-1.png)
+</details>
+
+<details><summary>Wireframe Blog Page</summary>
+
+![Blog](docs/wireframes/blog.png)
+</details>
+
+<details><summary>Wireframe Contact Page</summary>
+
+![Contact Page](docs/wireframes/contact-1.png)
+</details>
+
+<details><summary>Wireframe Profile</summary>
+
+![Profile](docs/wireframes/profile-1.png)
+</details>
+
+<details><summary>Wireframe Wishlist</summary>
+
+![Wishlist](docs/wireframes/wishlist-1.png)
+</details>
+
+<details><summary>Wireframe Bag</summary>
+
+![Bag](docs/wireframes/bag-1.png)
+</details>
+
+<details><summary>Wireframe Checkout Page</summary>
+
+![Checkout Page](docs/wireframes/checkout-1.png)
+</details>
+
+
+##### Back to [top](#table-of-contents)<hr>
+
+## Design
+
+### Colors
+
+For home page and products page were chosen red background, for navigation and footer - dark colors. For product details chosen Grayish yellow background.
+Background for blog, bag and checkout I chose white.
+
+<details><summary>See Color Palette</summary>
+
+![Color Palette](docs/palette.png)
+</details>
+
+### Fonts
+
+The font was selected from Google Fonts, Gelasio. This font offers great readability, both for long paragraphs in small bodies and big and flashy titles or highlighted content.
+
+<details><summary>See Font Image</summary>
+
+![Font Image](docs/font.png)
+</details>
+<hr>
