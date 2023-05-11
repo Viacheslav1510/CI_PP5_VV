@@ -49,6 +49,7 @@
   - [CSS Validation](#css-validation)
   - [JavaScript Validation](#javascript-validation)
   - [PEP8 Validation](#pep8-validation)
+  - [Accessibility](#accessibility)
 
 <hr>
 
@@ -1072,7 +1073,7 @@ The [W3C Markup Validation Service](https://validator.w3.org/) was used to valid
 ![Logout html](docs/validation/html/logout.png)
 </details>
 
-Back to [top](#table-of-contents)<hr> 
+Back to [top](#table-of-contents)
 
 ### CSS Validation
 The [W3C Jigsaw CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to validate the CSS of the website.
@@ -1132,7 +1133,7 @@ The [W3C Jigsaw CSS Validation Service](https://jigsaw.w3.org/css-validator/) wa
 
 - no issues
 
-Back to [top](#table-of-contents)<hr>
+Back to [top](#table-of-contents)
 
 ### PEP8 Validation
 [CI Python Linter](https://pep8ci.herokuapp.com/) was used to check the code for PEP8 requirements.
@@ -1175,6 +1176,8 @@ Back to [top](#table-of-contents)<hr>
   <img src="docs/validation/pep8/blog-views.png">
   </details>
 
+<hr>
+
 - Checkout
 
   <details><summary>admin.py</summary>
@@ -1213,6 +1216,8 @@ Back to [top](#table-of-contents)<hr>
   <img src="docs/validation/pep8/checkout-webhook.png">
   </details>
 
+<hr>
+
 - Contact 
 
   <details><summary>forms.py</summary>
@@ -1231,6 +1236,8 @@ Back to [top](#table-of-contents)<hr>
   <img src="docs/validation/pep8/contact-views.png">
   </details>
 
+<hr>
+
 - Home
 
   <details><summary>contexts.py</summary>
@@ -1244,6 +1251,8 @@ Back to [top](#table-of-contents)<hr>
   <details><summary>views.py</summary>
   <img src="docs/validation/pep8/home-views.png">
   </details>
+
+<hr>
 
 - Products
 
@@ -1267,6 +1276,8 @@ Back to [top](#table-of-contents)<hr>
   <img src="docs/validation/pep8/products-views.png">
   </details>
 
+<hr>
+
 - Profiles
 
   <details><summary>forms.py</summary>
@@ -1283,6 +1294,9 @@ Back to [top](#table-of-contents)<hr>
 
   <details><summary>views.py</summary>
   <img src="docs/validation/pep8/profiles-views.png">
+  </details>
+
+<hr>
 
 - Wishlist
 
@@ -1296,3 +1310,44 @@ Back to [top](#table-of-contents)<hr>
 
   <details><summary>views.py</summary>
   <img src="docs/validation/pep8/wishlist-views.png">
+  </details>
+
+<hr>
+
+### Accessibility 
+
+The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/) was used to ensure the website met high accessibility standards.
+
+<details><summary>Home</summary>
+<img src="docs/validation/wave/index.png">
+</details>
+
+<details><summary>All Products</summary>
+<img src="docs/validation/wave/all-products.png">
+</details>
+
+<details><summary>Product details</summary>
+<img src="docs/validation/wave/product-details.png">
+</details>
+
+<details><summary>Blog</summary>
+<img src="docs/validation/wave/blog.png">
+</details>
+
+<details><summary>Contact</summary>
+<img src="docs/validation/wave/contact.png">
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/validation/wave/profile.png">
+</details>
+
+<details><summary>Bag</summary>
+<img src="docs/validation/wave/bag.png">
+</details>
+
+<details><summary>Checkout</summary>
+<img src="docs/validation/wave/checkout.png">
+</details>
+
+Back to [top](#table-of-contents)<hr>
