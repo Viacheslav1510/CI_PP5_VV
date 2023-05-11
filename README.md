@@ -50,7 +50,7 @@
   - [JavaScript Validation](#javascript-validation)
   - [PEP8 Validation](#pep8-validation)
   - [Accessibility](#accessibility)
-  - [Lighthouse](#lighthouse)
+  - [PageSpeed Insights](#pagespeed-insights)
 
 <hr>
 
@@ -1353,4 +1353,82 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/) wa
 
 Back to [top](#table-of-contents)<hr>
 
-### Lighthouse
+### PageSpeed Insights
+
+Performance, best practices and SEO was tested using [PageSpeed Insights](https://pagespeed.web.dev/).
+
+<details><summary>Home</summary>
+- Desktop
+  <img src="docs/validation/lighthouse/home-desktop.png">
+- Mobile
+  <img src="docs/validation/lighthouse/home-mobile.png">
+
+</details>
+
+<details><summary>All Products</summary>
+- Desktop
+  <img src="docs/validation/lighthouse/all-products-desktop.png">
+- Mobile
+  <img src="docs/validation/lighthouse/all-products-mobile.png">
+
+</details>
+
+<details><summary>Product details</summary>
+- Desktop
+  <img src="docs/validation/lighthouse/product-details-desktop.png">
+- Mobile
+  <img src="docs/validation/lighthouse/product-details-mobile.png">
+
+</details>
+
+<details><summary>Blog</summary>
+- Desktop
+  <img src="docs/validation/lighthouse/blog-desktop.png">
+- Mobile
+  <img src="docs/validation/lighthouse/blog-mobile.png">
+
+</details>
+
+<details><summary>Post details</summary>
+- Desktop
+  <img src="docs/validation/lighthouse/post-details.png">
+
+</details>
+
+<details><summary>Contact</summary>
+- Desktop
+  <img src="docs/validation/lighthouse/contact-desktop.png">
+- Mobile
+  <img src="docs/validation/lighthouse/contact-mobile.png">
+
+</details>
+
+<details><summary>Profile</summary>
+- Desktop
+  <img src="docs/validation/lighthouse/profile-desktop.png">
+- Mobile
+  <img src="docs/validation/lighthouse/profile-mobile.png">
+
+</details>
+
+<details><summary>Wishlist</summary>
+- Desktop
+  <img src="docs/validation/lighthouse/wishlist-desktop.png">
+- Mobile
+  <img src="docs/validation/lighthouse/wishlist-mobile.png">
+
+</details>
+
+<details><summary>Bag</summary>
+- Desktop
+  <img src="docs/validation/lighthouse/bag-desktop.png">
+- Mobile
+  <img src="docs/validation/lighthouse/bag-mobile.png">
+
+</details>
+
+<details><summary>Checkout</summary>
+- Desktop
+  <img src="docs/validation/lighthouse/checkout.png">
+
+</details>
