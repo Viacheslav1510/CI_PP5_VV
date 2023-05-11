@@ -31,7 +31,7 @@ if "DEVELOPMENT" in os.environ:
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['ci-tvv-pp5.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['ci-tvv-pp5.herokuapp.com', 'localhost', '127.0.0.1', '*']
 
 
 # Application definition

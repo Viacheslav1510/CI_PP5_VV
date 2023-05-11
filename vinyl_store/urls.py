@@ -7,7 +7,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Internal:
-from .views import page_not_found_view
+from .views import handler404
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -25,4 +25,4 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = "vinyl_store.views.page_not_found_view"
+handler404 = "vinyl_store.views.handler404"
