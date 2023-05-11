@@ -45,6 +45,7 @@
   - [Libraries \& Tools](#libraries--tools)
 - [Features](#features)
 - [Validation](#validation)
+  - [HTML](#html)
 
 <hr>
 
@@ -140,7 +141,7 @@ The site consists of the following pages:
 - Login
 - Logout
 - Profile
-- Wishlist
+- Wish list
 - Bag
 - Checkout
 - Checkout success
@@ -312,9 +313,9 @@ Back to [top](#table-of-contents)
 | 4 | Shopper / Site User | look at blog | provides me with regular updates through published posts |
 | Viewing and navigation ||||
 | 5 | Shopper / Site User | view a list of products | I can select some to purchase |
-| 6 | Shopper / Site User | view individual product details | I can identify the price, description, rating and add to item to wishlist |
+| 6 | Shopper / Site User | view individual product details | I can identify the price, description, rating and add to item to wish list |
 | 7 | Shopper / Site User | see list of album tracks | I can view all the interested me tracks |
-| 8 | Shopper / Site User | add to wishlist some products | I can come back to wishlist and buy interested products |
+| 8 | Shopper / Site User | add to wish list some products | I can come back to wish list and buy interested products |
 | 9 | Shopper / Site User | be interested in previous shopper experience | I can choose a product according to the best reviews |
 | 10 | Shopper / Site User | add products to bag | I can review my items before I buy them |
 | 11 | Shopper / Site User | see my orders  | I can track the progress of all my orders  |
@@ -698,7 +699,7 @@ I have used meta keywords that make it possible for people to find my site via s
 </details>
 
 - Navigation
-  - Navbar includes links to all products, blog page, contact page, bag, profile page, and wishlist
+  - Navbar includes links to all products, blog page, contact page, bag, profile page, and wish list
   - Navbar has search field for products searching
   - Indicates login/logout and register in status.
   - Fully Responsive.
@@ -754,7 +755,7 @@ I have used meta keywords that make it possible for people to find my site via s
 
 - Products list page
   - Products list page contains all products cards, free delivery information, sorting field, buttons to sort by album genre.
-  - User allowed to add each product to bag or put it in wishlist.
+  - User allowed to add each product to bag or put it in wish list.
   - User stories covered: 5, 8, 10, 16, 17, 18.
 
 <details><summary>See feature images</summary>
@@ -764,8 +765,8 @@ I have used meta keywords that make it possible for people to find my site via s
 
 - Products details
   - Products details page contains album image, album description, quantity input, add to bag button.
-  - Page provides add to wishlist button and album tracklist.
-  - User allowed to add album to wishlist or remove accordingly.
+  - Page provides add to wish list button and album tracklist.
+  - User allowed to add album to wish list or remove accordingly.
   - User stories covered: 6, 7, 8, 10,
 
 <details><summary>See feature images</summary>
@@ -809,7 +810,7 @@ I have used meta keywords that make it possible for people to find my site via s
 - Wishlist
 
   - Allows user to add favourite items to wished list
-  - User can delete item from wishlist or add it to bag
+  - User can delete item from wish list or add it to bag
   - Wishlist works on all products page and in product details
   - User stories covered: 8.
 
@@ -901,11 +902,171 @@ Back to [top](#table-of-contents)
 
 ## Validation 
 
-The W3C Markup Validation Service was used to validate the HTML of the website. 
+### HTML
+The [W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML code of the website. 
 
-- HOME
+- Home page
 
 <details><summary>index.html</summary>
 
-![Delete product](docs/features/delete-product.png)
+![Home](docs/validation/html)
 </details>
+
+- All products page
+
+<details><summary>products.html</summary>
+
+![Products](docs/validation/html/all_products.png)
+</details>
+
+- Product details page
+
+<details><summary>product-detail.html</summary>
+
+![Product detail](docs/validation/html/product-details.png)
+</details>
+
+- Add product page
+
+<details><summary>add-product.html</summary>
+
+![Add product](docs/validation/html/add_product.png)
+</details>
+
+| **Level** | **Feature** | **Issue Description** | **Comment** |
+|-------------|-------------|----------------------|-------------|
+| Error | N/A | N/A | N/A |
+| Warning | N/A | N/A | N/A | 
+| Info | Add Product | Trailing slash on void elements has no effect and interacts badly with unquoted attribute values. | Noted| 
+
+- Edit product page
+
+<details><summary>update_product.html</summary>
+
+![Update product](docs/validation/html/edit_product.png)
+</details>
+
+| **Level** | **Feature** | **Issue Description** | **Comment** |
+|-------------|-------------|----------------------|-------------|
+| Error | N/A | N/A | N/A |
+| Warning | N/A | N/A | N/A | 
+| Info | Edit Product | Trailing slash on void elements has no effect and interacts badly with unquoted attribute values. | Noted| 
+
+- Delete product confirmation page
+
+<details><summary>delete-confirmation.html</summary>
+
+![Delete product](docs/validation/html/delete-product-confirm.png)
+</details>
+
+| **Level** | **Feature** | **Issue Description** | **Comment** |
+|-------------|-------------|----------------------|-------------|
+| Error | N/A | N/A | N/A |
+| Warning | N/A | N/A | N/A | 
+| Info | Delete Product | Trailing slash on void elements has no effect and interacts badly with unquoted attribute values. | Noted|
+
+- Blog page
+
+<details><summary>blog.html</summary>
+
+![Blog](docs/validation/html/blog.png)
+</details>
+
+- Post details page
+
+<details><summary>post-details.html</summary>
+
+![Post details](docs/validation/html/post_details.png)
+</details>
+
+  - 2 error found (Summernote Editor)
+
+| **Level** | **Feature** | **Issue Description** | **Comment** |
+|-------------|-------------|----------------------|-------------|
+| Error | Post details | CSS / Bad value for attribute | These errors are caused by the Summernote editor and not by code written by the developer of this project. Time constraints did not allow me to resolve these issues at the present time |
+| Warning | N/A | N/A | N/A |
+| Info | N/A | N/A | N/A |   
+
+- Contact page
+
+<details><summary>contact.html</summary>
+
+![Contact](docs/validation/html/contact.png)
+</details>
+
+- Profile page
+
+<details><summary>profile.html</summary>
+
+![Profile](docs/validation/html/profile.png)
+</details>
+
+| **Level** | **Feature** | **Issue Description** | **Comment** |
+|-------------|-------------|----------------------|-------------|
+| Error | N/A | N/A | N/A |
+| Warning | N/A | N/A | N/A | 
+| Info | Profile | Trailing slash on void elements has no effect and interacts badly with unquoted attribute values. | Noted|
+
+- Order history page
+
+<details><summary>order-history.html</summary>
+
+![Order history](docs/validation/html/order_history.png)
+</details>
+
+- Wishlist page
+
+<details><summary>wishlist.html</summary>
+
+![Wishlist](docs/validation/html/wishlist.png)
+</details>
+
+| **Level** | **Feature** | **Issue Description** | **Comment** |
+|-------------|-------------|----------------------|-------------|
+| Error | N/A | N/A | N/A |
+| Warning | N/A | N/A | N/A | 
+| Info | Wishlist | Trailing slash on void elements has no effect and interacts badly with unquoted attribute values. | Noted|
+
+- Bag page
+
+<details><summary>bag.html</summary>
+
+![Bag](docs/validation/html/bag.png)
+</details>
+
+- Checkout page
+
+<details><summary>checkout.html</summary>
+
+![Checkout](docs/validation/html/checkout.png)
+</details>
+
+- Checkout success page
+
+<details><summary>checkout-success.html</summary>
+
+![Checkout success](docs/validation/html/checkout-success.png)
+</details>
+
+- Register page
+
+<details><summary>signup.html</summary>
+
+![Signup](docs/validation/html/signup.png)
+</details>
+
+- Log In page
+
+<details><summary>login.html</summary>
+
+![Login](docs/validation/html/login.png)
+</details>
+
+- Log Out page
+
+<details><summary>logout.html</summary>
+
+![Logout](docs/validation/html/logout.png)
+</details>
+
+Back to [top](#table-of-contents)<hr> 
