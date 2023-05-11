@@ -50,6 +50,7 @@
   - [JavaScript Validation](#javascript-validation)
   - [PEP8 Validation](#pep8-validation)
   - [Accessibility](#accessibility)
+  - [Lighthouse](#lighthouse)
 
 <hr>
 
@@ -1351,3 +1352,5 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/) wa
 </details>
 
 Back to [top](#table-of-contents)<hr>
+
+### Lighthouse
