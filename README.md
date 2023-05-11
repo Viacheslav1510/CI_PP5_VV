@@ -46,6 +46,7 @@
 - [Features](#features)
 - [Validation](#validation)
   - [HTML](#html)
+  - [CSS Validation](#css-validation)
 
 <hr>
 
@@ -909,28 +910,28 @@ The [W3C Markup Validation Service](https://validator.w3.org/) was used to valid
 
 <details><summary>index.html</summary>
 
-![Home](docs/validation/html)
+![Home html](docs/validation/html)
 </details>
 
 - All products page
 
 <details><summary>products.html</summary>
 
-![Products](docs/validation/html/all_products.png)
+![Products html](docs/validation/html/all_products.png)
 </details>
 
 - Product details page
 
 <details><summary>product-detail.html</summary>
 
-![Product detail](docs/validation/html/product-details.png)
+![Product detail html](docs/validation/html/product-details.png)
 </details>
 
 - Add product page
 
 <details><summary>add-product.html</summary>
 
-![Add product](docs/validation/html/add_product.png)
+![Add product html](docs/validation/html/add_product.png)
 </details>
 
 | **Level** | **Feature** | **Issue Description** | **Comment** |
@@ -943,7 +944,7 @@ The [W3C Markup Validation Service](https://validator.w3.org/) was used to valid
 
 <details><summary>update_product.html</summary>
 
-![Update product](docs/validation/html/edit_product.png)
+![Update product html](docs/validation/html/edit_product.png)
 </details>
 
 | **Level** | **Feature** | **Issue Description** | **Comment** |
@@ -956,7 +957,7 @@ The [W3C Markup Validation Service](https://validator.w3.org/) was used to valid
 
 <details><summary>delete-confirmation.html</summary>
 
-![Delete product](docs/validation/html/delete-product-confirm.png)
+![Delete product html](docs/validation/html/delete-product-confirm.png)
 </details>
 
 | **Level** | **Feature** | **Issue Description** | **Comment** |
@@ -969,14 +970,14 @@ The [W3C Markup Validation Service](https://validator.w3.org/) was used to valid
 
 <details><summary>blog.html</summary>
 
-![Blog](docs/validation/html/blog.png)
+![Blog html](docs/validation/html/blog.png)
 </details>
 
 - Post details page
 
 <details><summary>post-details.html</summary>
 
-![Post details](docs/validation/html/post_details.png)
+![Post details html](docs/validation/html/post_details.png)
 </details>
 
   - 2 error found (Summernote Editor)
@@ -991,14 +992,14 @@ The [W3C Markup Validation Service](https://validator.w3.org/) was used to valid
 
 <details><summary>contact.html</summary>
 
-![Contact](docs/validation/html/contact.png)
+![Contact html](docs/validation/html/contact.png)
 </details>
 
 - Profile page
 
 <details><summary>profile.html</summary>
 
-![Profile](docs/validation/html/profile.png)
+![Profile html](docs/validation/html/profile.png)
 </details>
 
 | **Level** | **Feature** | **Issue Description** | **Comment** |
@@ -1011,14 +1012,14 @@ The [W3C Markup Validation Service](https://validator.w3.org/) was used to valid
 
 <details><summary>order-history.html</summary>
 
-![Order history](docs/validation/html/order_history.png)
+![Order history html](docs/validation/html/order_history.png)
 </details>
 
 - Wishlist page
 
 <details><summary>wishlist.html</summary>
 
-![Wishlist](docs/validation/html/wishlist.png)
+![Wishlist html](docs/validation/html/wishlist.png)
 </details>
 
 | **Level** | **Feature** | **Issue Description** | **Comment** |
@@ -1031,42 +1032,73 @@ The [W3C Markup Validation Service](https://validator.w3.org/) was used to valid
 
 <details><summary>bag.html</summary>
 
-![Bag](docs/validation/html/bag.png)
+![Bag html](docs/validation/html/bag.png)
 </details>
 
 - Checkout page
 
 <details><summary>checkout.html</summary>
 
-![Checkout](docs/validation/html/checkout.png)
+![Checkout html](docs/validation/html/checkout.png)
 </details>
 
 - Checkout success page
 
 <details><summary>checkout-success.html</summary>
 
-![Checkout success](docs/validation/html/checkout-success.png)
+![Checkout success html](docs/validation/html/checkout-success.png)
 </details>
 
 - Register page
 
 <details><summary>signup.html</summary>
 
-![Signup](docs/validation/html/signup.png)
+![Signup html](docs/validation/html/signup.png)
 </details>
 
 - Log In page
 
 <details><summary>login.html</summary>
 
-![Login](docs/validation/html/login.png)
+![Login html](docs/validation/html/login.png)
 </details>
 
 - Log Out page
 
 <details><summary>logout.html</summary>
 
-![Logout](docs/validation/html/logout.png)
+![Logout html](docs/validation/html/logout.png)
 </details>
 
 Back to [top](#table-of-contents)<hr> 
+
+### CSS Validation
+The [W3C Jigsaw CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to validate the CSS of the website.
+
+<details><summary>base.css</summary>
+<img src="docs/validation/css/base.png">
+</details> 
+
+<details><summary>blog.css</summary>
+<img src="docs/validation/css/blog.png">
+</details> 
+
+<details><summary>bag.css</summary>
+<img src="docs/validation/css/bag.png">
+</details
+
+<details><summary>checkout.css</summary>
+<img src="docs/validation/css/checkout.png">
+</details
+
+<details><summary>contact.css</summary>
+<img src="docs/validation/css/contact.png">
+</details
+
+<details><summary>products.css</summary>
+<img src="docs/validation/css/products.png">
+</details
+
+<details><summary>profiles.css</summary>
+<img src="docs/validation/css/profiles.png">
+</details
