@@ -43,4 +43,3 @@ class UserProfileForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             widget_attr = 'border-black rounded-0 profile-form-input'
             self.fields[field].widget.attrs['class'] = widget_attr
-            self.fields[field].label = False
