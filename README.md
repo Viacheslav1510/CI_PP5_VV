@@ -47,6 +47,8 @@
 - [Validation](#validation)
   - [HTML](#html)
   - [CSS Validation](#css-validation)
+  - [JavaScript Validation](#javascript-validation)
+  - [PEP8 Validation](#pep8-validation)
 
 <hr>
 
@@ -1102,3 +1104,195 @@ The [W3C Jigsaw CSS Validation Service](https://jigsaw.w3.org/css-validator/) wa
 <details><summary>profiles.css</summary>
 <img src="docs/validation/css/profiles.png">
 </details
+
+### JavaScript Validation
+[JSHint](https://jshint.com/) javaScript Validation Service was used to validate all javaScript files.
+
+<details><summary>stripe-elements.js</summary>
+<img src="docs/validation/js/stripe-elements.png">
+</details
+
+- one undefined variable Stripe which originates from an external script
+
+<details><summary>map.js</summary>
+<img src="docs/validation/js/map.png">
+</details
+
+- two unused variables markerCluster and initMap two functions that are used by external Google Map script in contact html.
+
+<details><summary>quantity_input_script.js</summary>
+<img src="docs/validation/js/quantity.png">
+</details
+
+- no issues
+
+<details><summary>countryfield.js</summary>
+<img src="docs/validation/js/countryfield.png">
+</details
+
+- no issues
+
+Back to [top](#table-of-contents)<hr>
+
+### PEP8 Validation
+[CI Python Linter](https://pep8ci.herokuapp.com/) was used to check the code for PEP8 requirements.
+
+- Bag
+
+  <details><summary>contexts.py</summary>
+  <img src="docs/validation/pep8/bag-bag_contents.png">
+  </details>
+
+  <details><summary>test_views.py</summary>
+  <img src="docs/validation/pep8/bag-test_views.png">
+  </details>
+
+  <details><summary>urls.py</summary>
+  <img src="docs/validation/pep8/bag-urls.png">
+  </details>
+
+  <details><summary>views.py</summary>
+  <img src="docs/validation/pep8/bag-views.png">
+  </details>
+
+<hr>
+
+- Blog
+  
+  <details><summary>admin.py</summary>
+  <img src="docs/validation/pep8/blog-admin.png">
+  </details>
+
+  <details><summary>models.py</summary>
+  <img src="docs/validation/pep8/blog-models.png">
+  </details>
+
+  <details><summary>urls.py</summary>
+  <img src="docs/validation/pep8/blog-urls.png">
+  </details>
+
+  <details><summary>views.py</summary>
+  <img src="docs/validation/pep8/blog-views.png">
+  </details>
+
+- Checkout
+
+  <details><summary>admin.py</summary>
+  <img src="docs/validation/pep8/checkout-admin.png">
+  </details>
+
+  <details><summary>forms.py</summary>
+  <img src="docs/validation/pep8/checkout-forms.png">
+  </details>
+
+  <details><summary>models.py</summary>
+  <img src="docs/validation/pep8/checkout-models.png">
+  </details>
+
+  <details><summary>signals.py</summary>
+  <img src="docs/validation/pep8/checkout-signals.png">
+  </details>
+  
+  <details><summary>test_views.py</summary>
+  <img src="docs/validation/pep8/checkout-test_views.png">
+  </details>
+
+  <details><summary>urls.py</summary>
+  <img src="docs/validation/pep8/checkout-urls.png">
+  </details>
+
+  <details><summary>views.py</summary>
+  <img src="docs/validation/pep8/checkout-views.png">
+  </details>
+
+  <details><summary>webhook_handler.py</summary>
+  <img src="docs/validation/pep8/checkout-webhook_handler.png">
+  </details>
+
+  <details><summary>webhooks.py</summary>
+  <img src="docs/validation/pep8/checkout-webhook.png">
+  </details>
+
+- Contact 
+
+  <details><summary>forms.py</summary>
+  <img src="docs/validation/pep8/contact-froms.png">
+  </details>
+
+  <details><summary>models.py</summary>
+  <img src="docs/validation/pep8/contact-models.png">
+  </details>
+
+  <details><summary>urls.py</summary>
+  <img src="docs/validation/pep8/contact-urls.png">
+  </details>
+
+  <details><summary>views.py</summary>
+  <img src="docs/validation/pep8/contact-views.png">
+  </details>
+
+- Home
+
+  <details><summary>contexts.py</summary>
+  <img src="docs/validation/pep8/home-contexts.png">
+  </details>
+
+  <details><summary>urls.py</summary>
+  <img src="docs/validation/pep8/home-urls.png">
+  </details>
+
+  <details><summary>views.py</summary>
+  <img src="docs/validation/pep8/home-views.png">
+  </details>
+
+- Products
+
+  <details><summary>admin.py</summary>
+  <img src="docs/validation/pep8/products-admin.png">
+  </details>
+
+  <details><summary>forms.py</summary>
+  <img src="docs/validation/pep8/products-forms.png">
+  </details>
+
+  <details><summary>models.py</summary>
+  <img src="docs/validation/pep8/products-models.png">
+  </details>
+
+  <details><summary>urls.py</summary>
+  <img src="docs/validation/pep8/products-urls.png">
+  </details>
+
+  <details><summary>views.py</summary>
+  <img src="docs/validation/pep8/products-views.png">
+  </details>
+
+- Profiles
+
+  <details><summary>forms.py</summary>
+  <img src="docs/validation/pep8/profiles-forms.png">
+  </details>
+
+  <details><summary>models.py</summary>
+  <img src="docs/validation/pep8/profiles-models.png">
+  </details>
+
+  <details><summary>urls.py</summary>
+  <img src="docs/validation/pep8/profiles-urls.png">
+  </details>
+
+  <details><summary>views.py</summary>
+  <img src="docs/validation/pep8/profiles-views.png">
+
+- Wishlist
+
+  <details><summary>models.py</summary>
+  <img src="docs/validation/pep8/wishlist-models.png">
+  </details>
+
+  <details><summary>urls.py</summary>
+  <img src="docs/validation/pep8/wishlist-urls.png">
+  </details>
+
+  <details><summary>views.py</summary>
+  <img src="docs/validation/pep8/wishlist-views.png">
