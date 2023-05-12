@@ -1465,7 +1465,7 @@ Back to [top](#table-of-contents)<hr>
 | Home page | Open website| User can see website description | Works as expected |  
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-1.png">
 </details>  
 
 2. As a Shopper / Site User I can navigate across the site so that I can move to each feature of the site easily.
@@ -1475,7 +1475,8 @@ Back to [top](#table-of-contents)<hr>
 | Navigation | Click any link in navigation | User can see the page he is intrested in | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-2-1.png">
+<img src="docs/testing/manual_testing/test-2-2.png">
 </details>  
 
 3. As a Shopper / Site User I can look at footer so that I can see contact information, social links and website info.
@@ -1485,7 +1486,8 @@ Back to [top](#table-of-contents)<hr>
 | Footer | Scroll down on any website page | User can see footer with all provided information | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-3-1.png">
+<img src="docs/testing/manual_testing/test-3-2.png">
 </details>  
 
 4. As a Shopper / Site User I can look at blog so that provides me with regular updates through published posts.
@@ -1495,7 +1497,8 @@ Back to [top](#table-of-contents)<hr>
 | Navigation | Click blog link | User can see blog posts | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-4-1.png">
+<img src="docs/testing/manual_testing/test-4-2.png">
 </details>  
 
 5. As a Shopper / Site User I can view a list of products so that I can select some to purchase. 
@@ -1506,7 +1509,8 @@ Back to [top](#table-of-contents)<hr>
 | Home page | Click 'shopnow' button | User can see all products provided | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-5-1.png">
+<img src="docs/testing/manual_testing/test-5-2.png">
 </details>  
 
 6. As a Shopper / Site User I can view individual product details so that I can identify the price, description, rating and add to item to wish list.
@@ -1516,7 +1520,8 @@ Back to [top](#table-of-contents)<hr>
 | Products list page | Click on interested product image or product name | User can see products details | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-6-1.png">
+<img src="docs/testing/manual_testing/test-6-2.png">
 </details> 
 
 7. As a Shopper / Site User I can see list of album tracks so that I can view all the interested me tracks.
@@ -1526,7 +1531,7 @@ Back to [top](#table-of-contents)<hr>
 | Products details | Scroll down | User can see all tracks contained in the album | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-7-2.png">
 </details> 
 
 8. As a Shopper / Site User I can add to wish list some products so that I can come back to wish list and buy interested products.
@@ -1539,7 +1544,11 @@ Back to [top](#table-of-contents)<hr>
 | Wishlist | Click trash icon on item | Album added removed form wishlist | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-8-1.png">
+<img src="docs/testing/manual_testing/test-8-2.png">
+<img src="docs/testing/manual_testing/test-8-3.png">
+<img src="docs/testing/manual_testing/test-8-4.png">
+<img src="docs/testing/manual_testing/test-8-5.png">
 </details> 
 
 9.  As a Shopper / Site User I can be interested in previous shopper experience so that I can choose a product according to the best reviews.
@@ -1555,7 +1564,9 @@ Doesn't implemented.
 | Bag | Click plus or minus button in quantity section | Item quantity has been changed | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-10-1.png">
+<img src="docs/testing/manual_testing/test-10-2.png">
+
 </details> 
 
 11.  As a Shopper / Site User I can see my orders so that I can track the progress of all my orders.
@@ -1566,7 +1577,7 @@ Doesn't implemented.
 | Profile page | Look at order history section | User can see all their orders | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-11.png">
 </details>
 
 12.  As a Shopper / Site User I can write a message to site owner so that I can get in touch with website team.
@@ -1579,7 +1590,9 @@ User has to be logged in to send messages
 | Contact page | Fill out the form provided and click send | User can see confirmation about message has been sent | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-12-1.png">
+<img src="docs/testing/manual_testing/test-12-2.png">
+<img src="docs/testing/manual_testing/test-12-3.png">
 </details>
 
 13.  As a Shopper / Site User I can be notified of my actions so that I can be aware the action was completed successfully or not.
@@ -1592,7 +1605,8 @@ User has to be logged in to send messages
 | Checkout | Make payment | User can see notification about their action | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-13-1.png">
+<img src="docs/testing/manual_testing/test-13-2.png">
 </details>
 
 14.  As a Shopper / Site User I can easily register for an account so that I have personal account and be able to view my profile.
@@ -1603,7 +1617,9 @@ User has to be logged in to send messages
 | Sign up / Register | Fill out the form provided | User receive confirmation email | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-14-1.png">
+<img src="docs/testing/manual_testing/test-14-2.png">
+<img src="docs/testing/manual_testing/test-14-3.png">
 </details>
 
 15. As a Shopper / Site User I can login and logout so that I can access my personal account information.
@@ -1616,7 +1632,11 @@ User has to be logged in to send messages
 | Logout | Click sign out button | User logged out | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-15-1.png">
+<img src="docs/testing/manual_testing/test-15-2.png">
+<img src="docs/testing/manual_testing/test-15-3.png">
+<img src="docs/testing/manual_testing/test-15-4.png">
+<img src="docs/testing/manual_testing/test-15-5.png">
 </details>
 
 16.  As a Shopper / Site User I can register by my social media so that I can easier login to website.
@@ -1630,7 +1650,8 @@ Doesn't implemented.
 | Navigation | Type album name that you want to find | User can see list of items that suits search | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-17-1.png">
+<img src="docs/testing/manual_testing/test-17-2.png">
 </details>
 
 18. As a Shopper / Site User I can sort the list of available products so that I can identify the best rated, best priced and categorically sorted. 
@@ -1641,7 +1662,10 @@ Doesn't implemented.
 | Products list page  | Click one of the genre category buttons | User can see list of items that suits selected category | Works as expected |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-18-1.png">
+<img src="docs/testing/manual_testing/test-18-2.png">
+<img src="docs/testing/manual_testing/test-18-3.png">
+<img src="docs/testing/manual_testing/test-18-4.png">
 </details>
 
 19. As a Shopper / Site User I can sort albums by genre so that I can select products of a certain genre. 
@@ -1652,7 +1676,9 @@ Doesn't implemented.
 | Products list page  | Click one of the genre category buttons | User can see list of items that suits selected category | Works as expected |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-19-1.png">
+<img src="docs/testing/manual_testing/test-19-2.png">
+<img src="docs/testing/manual_testing/test-19-3.png">
 </details>
 
 20. As a Shopper / Site User I can use a card as the payment method so that I can purchase the product online. 
@@ -1662,7 +1688,7 @@ Doesn't implemented.
 | Checkout, Stripe  | Scroll down to payment section | User can see form to input card details | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-20-1.png">
 </details>
 
 21. As a Shopper / Site User I can 	have a profile so that I can store my information for faster checkouts.
@@ -1674,7 +1700,8 @@ Doesn't implemented.
 | Profile  | Look at profile default delivery information | User can see their information for future checkouts and update it | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-21-1.png">
+<img src="docs/testing/manual_testing/test-21-2.png">
 </details>
 
 22. As a Shopper / Site User I can pay for product so that I can complete the payment through secure checkout.
@@ -1685,7 +1712,8 @@ Doesn't implemented.
 | Checkout success |  No action | User can see confirmation page about his order  | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-22-1.png">
+<img src="docs/testing/manual_testing/test-22-2.png">
 </details>
 
 23. As a Shopper / Site User I can receive an email confirmation after checkout so that I can keep confirmation of what I've purchased.
@@ -1696,10 +1724,10 @@ Doesn't implemented.
 
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-23-1.png">
 </details>
 
-23. As an Admin I can add, edit or delete products so that I can change products criteria and delete products.
+24.  As an Admin I can add, edit or delete products so that I can change products criteria and delete products.
 
 Functionality available only for website Admin or Authorised user by Admin
 
@@ -1711,10 +1739,18 @@ Functionality available only for website Admin or Authorised user by Admin
 
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-24-1.png">
+<img src="docs/testing/manual_testing/test-24-2.png">
+<img src="docs/testing/manual_testing/test-24-3.png">
+<img src="docs/testing/manual_testing/test-24-4.png">
+<img src="docs/testing/manual_testing/test-24-5.png">
+<img src="docs/testing/manual_testing/test-24-6.png">
+<img src="docs/testing/manual_testing/test-24-7.png">
+<img src="docs/testing/manual_testing/test-24-8.png">
+<img src="docs/testing/manual_testing/test-24-9.png">
 </details>
 
-23. As an Admin I can add blog posts so that I can provide latest information for my customers.
+25. As an Admin I can add blog posts so that I can provide latest information for my customers.
 
 Functionality available only for website Admin or Authorised user by Admin
 
@@ -1723,5 +1759,7 @@ Functionality available only for website Admin or Authorised user by Admin
 | Admin panel | Select Posts link | Admin can add the post for a blog | Works as expected  |
 
 <details><summary>See Images</summary>
-<img src="">
+<img src="docs/testing/manual_testing/test-25-1.png">
+<img src="docs/testing/manual_testing/test-25-2.png">
+<img src="docs/testing/manual_testing/test-25-3.png">
 </details>
