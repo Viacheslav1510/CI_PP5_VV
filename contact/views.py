@@ -33,13 +33,7 @@ def contact_view(request):
             if contact_form.is_valid():
                 contact = contact_form.save(commit=False)
 
-                return render(
-                        request,
-                        'contact/contact.html',
-                        {
-                            'contact_form': contact_form
-                        }
-                    )
+                return render(request, 'contact/message-received.html')
     else:
         contact_form = ContactForm()
 
