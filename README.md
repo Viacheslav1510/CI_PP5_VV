@@ -51,6 +51,8 @@
   - [PEP8 Validation](#pep8-validation)
   - [Accessibility](#accessibility)
   - [PageSpeed Insights](#pagespeed-insights)
+- [Testing](#testing)
+  - [Manual testing](#manual-testing)
 
 <hr>
 
@@ -867,13 +869,27 @@ I have used meta keywords that make it possible for people to find my site via s
   - Allows the user to receive an email confirmation for their order.
   - User stories covered: 23
 
+<details><summary>See feature images</summary>
+
+![Email confirm](docs/features/email-confirmation.png)
+</details>
+
+- Checkout success
+  - Shows the page confirmation with user order.
+  - User stories covered: 13
+
+<details><summary>See feature images</summary>
+
+![Checkout](docs/features/success.png)
+</details>
+
 - Notifications container
   - Allows the user to see relevant notifications.
   - User stories covered: 13
 
 <details><summary>See feature images</summary>
 
-![Email confirm](docs/features/email-confirmation.png)
+![Email confirm](docs/features/notifications.png)
 </details>
 
 - Add Product
@@ -1431,4 +1447,281 @@ Performance, best practices and SEO was tested using [PageSpeed Insights](https:
 - Desktop
   <img src="docs/validation/lighthouse/checkout.png">
 
+</details>
+
+Back to [top](#table-of-contents)<hr>
+
+## Testing
+
+1. Manual testing User Stories
+2. Automated testing
+
+### Manual testing
+
+1. As a First time user I can see a website description so that should help me understand what the site is about.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Home page | Open website| User can see website description | Works as expected |  
+
+<details><summary>See Images</summary>
+<img src="">
+</details>  
+
+2. As a Shopper / Site User I can navigate across the site so that I can move to each feature of the site easily.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Navigation | Click any link in navigation | User can see the page he is intrested in | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>  
+
+3. As a Shopper / Site User I can look at footer so that I can see contact information, social links and website info.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Footer | Scroll down on any website page | User can see footer with all provided information | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>  
+
+4. As a Shopper / Site User I can look at blog so that provides me with regular updates through published posts.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Navigation | Click blog link | User can see blog posts | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>  
+
+5. As a Shopper / Site User I can view a list of products so that I can select some to purchase. 
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Navigation | Click shop link and choose genre or all albums | User can see products that match the request | Works as expected  |
+| Home page | Click 'shopnow' button | User can see all products provided | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>  
+
+6. As a Shopper / Site User I can view individual product details so that I can identify the price, description, rating and add to item to wish list.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Products list page | Click on interested product image or product name | User can see products details | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details> 
+
+7. As a Shopper / Site User I can see list of album tracks so that I can view all the interested me tracks.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Products details | Scroll down | User can see all tracks contained in the album | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details> 
+
+8. As a Shopper / Site User I can add to wish list some products so that I can come back to wish list and buy interested products.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Products details | Click heart icon under album image | Album added to wish list | Works as expected  |
+| Products list page | Click heart icon on product card | Album added to wish list | Works as expected  |
+| Wishlist | Click bag icon on item | Album added to bag | Works as expected  |
+| Wishlist | Click trash icon on item | Album added removed form wishlist | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details> 
+
+9.  As a Shopper / Site User I can be interested in previous shopper experience so that I can choose a product according to the best reviews.
+
+Doesn't implemented.
+
+10. As a Shopper / Site User I can add products to bag so that I can review my items before I buy them.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Products details | Click add to bag button | Album added bag | Works as expected  |
+| Products list page | Click cart icon on product card | Album added to bag | Works as expected  |
+| Bag | Click plus or minus button in quantity section | Item quantity has been changed | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details> 
+
+11.  As a Shopper / Site User I can see my orders so that I can track the progress of all my orders.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Navigation | Click profile link to open profile page | User can see profile page | Works as expected  |
+| Profile page | Look at order history section | User can see all their orders | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+12.  As a Shopper / Site User I can write a message to site owner so that I can get in touch with website team.
+
+User has to be logged in to send messages
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Navigation | Click contact link to open contact page | User can see order history on profile page | Works as expected  |
+| Contact page | Fill out the form provided and click send | User can see confirmation about message has been sent | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+1.  As a Shopper / Site User I can be notified of my actions so that I can be aware the action was completed successfully or not.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Products list page | Click add to bag button or add to wishlist | User can see notification about their action | Works as expected  |
+| Products details | Click add to bag button or add to wishlist | User can see notification about their action | Works as expected  |
+| Bag | Change item quantity | User can see notification about their action | Works as expected  |
+| Checkout | Make payment | User can see notification about their action | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+14.  As a Shopper / Site User I can easily register for an account so that I have personal account and be able to view my profile.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Navigation | Click register link | User can see registration page | Works as expected  |
+| Sign up / Register | Fill out the form provided | User receive confirmation email | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+15. As a Shopper / Site User I can login and logout so that I can access my personal account information.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Navigation | Click login link | User can see login page | Works as expected  |
+| Login | Fill out the form provided | User receive a notification that user loggend in | Works as expected  |
+| Navigation | Click logout link | User can see logout confirmation page | Works as expected  |
+| Logout | Click sign out button | User logged out | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+16.  As a Shopper / Site User I can register by my social media so that I can easier login to website.
+
+Doesn't implemented.
+
+17. As a Shopper / Site User I can search for an album so that I can find specific product I would like to purchase. 
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Navigation | Type album name that you want to find | User can see list of items that suits search | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+18. As a Shopper / Site User I can sort the list of available products so that I can identify the best rated, best priced and categorically sorted. 
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Products list page  | Select an option in Sort by filed | User can see list of items that suits sort option | Works as expected  |
+| Products list page  | Click one of the genre category buttons | User can see list of items that suits selected category | Works as expected |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+19. As a Shopper / Site User I can sort albums by genre so that I can select products of a certain genre. 
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Navigation  | Select an option in shop dropdown menu | User can see list of items that suits selected genre | Works as expected  |
+| Products list page  | Click one of the genre category buttons | User can see list of items that suits selected category | Works as expected |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+20. As a Shopper / Site User I can use a card as the payment method so that I can purchase the product online. 
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Checkout, Stripe  | Scroll down to payment section | User can see form to input card details | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+21. As a Shopper / Site User I can 	have a profile so that I can store my information for faster checkouts.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Checkout  | Fill out the form provided for checkout | User can check their information | Works as expected  |
+| Checkout  | Click save information check field and click complete purchase | User can save their information for future checkouts | Works as expected  |
+| Profile  | Look at profile default delivery information | User can see their information for future checkouts and update it | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+22. As a Shopper / Site User I can pay for product so that I can complete the payment through secure checkout.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Checkout  | Fill out the form provided for checkout | User can pay for product if he has enough money on his card  | Works as expected  |
+| Checkout success |  No action | User can see confirmation page about his order  | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+23. As a Shopper / Site User I can receive an email confirmation after checkout so that I can keep confirmation of what I've purchased.
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Email confirmation  | Go to your email page | User can see confirmation email about their order  | Works as expected  |
+
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+23. As an Admin I can add, edit or delete products so that I can change products criteria and delete products.
+
+Functionality available only for website Admin or Authorised user by Admin
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Add product | Select in the navbar add product link | Admin can add the product after filled out form  | Works as expected  |
+| Edit product | Select edit button on product list page or inside product details | Admin can update the product after filled out form  | Works as expected  |
+| Delete product | Select delete button on product list page or inside product details | Admin can dlete the product after confirmation | Works as expected  |
+
+
+<details><summary>See Images</summary>
+<img src="">
+</details>
+
+23. As an Admin I can add blog posts so that I can provide latest information for my customers.
+
+Functionality available only for website Admin or Authorised user by Admin
+
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Admin panel | Select Posts link | Admin can add the post for a blog | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="">
 </details>

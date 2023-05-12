@@ -15,7 +15,7 @@
                     <form action="{% url 'delete_product' album.id %}" method="POST" name="confirm" class="mt-5 pt-3">
                         {% csrf_token %}
                         <div class="d-flex flex-row justify-content-between logout-buttons">
-                            <a href="{% url 'product_detail' album.id %}" class="btn btn-dark">Go back</a>
+                            <a href="{% url 'products' %}" class="btn btn-dark">Go back</a>
                             <input type="submit" class="btn btn-danger" value="Delete" name="delete">
                         </div>
                     </form>
