@@ -1582,7 +1582,7 @@ User has to be logged in to send messages
 <img src="">
 </details>
 
-1.  As a Shopper / Site User I can be notified of my actions so that I can be aware the action was completed successfully or not.
+13.  As a Shopper / Site User I can be notified of my actions so that I can be aware the action was completed successfully or not.
 
 | Feature | Action | Expected Result | Actual Result |
 | ------- | ------ | --------------- | ------------- |
