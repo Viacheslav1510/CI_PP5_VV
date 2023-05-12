@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_summernote',
     "phonenumber_field",
+    'daterangefilter',
     'crispy_forms',
     'active_link',
     'storages',
