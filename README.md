@@ -53,6 +53,8 @@
   - [PageSpeed Insights](#pagespeed-insights)
 - [Testing](#testing)
   - [Manual testing](#manual-testing)
+  - [Device Testing \& Browser compatibility](#device-testing--browser-compatibility)
+- [Bugs](#bugs)
 
 <hr>
 
@@ -152,6 +154,7 @@ The site consists of the following pages:
 - Bag
 - Checkout
 - Checkout success
+- 404(page not found)
 
 Back to [top](#table-of-contents)
 
@@ -1763,3 +1766,33 @@ Functionality available only for website Admin or Authorised user by Admin
 <img src="docs/testing/manual_testing/test-25-2.png">
 <img src="docs/testing/manual_testing/test-25-3.png">
 </details>
+
+### Device Testing & Browser compatibility
+
+The site uses to test on various real world devices was [BrowserStack](https://www.browserstack.com/)
+
+The following devices were used to test my site:
+
+<details><summary>Apple iPhone 8</summary>
+<img src="docs/device/iphone8.png">
+</details>
+
+<details><summary>Samsung Galaxy S8</summary>
+<img src="docs/device/samsung_s8.png">
+</details>
+
+<details><summary>Mozilla Firefox</summary>
+<img src="docs/device/mozilla.png">
+</details>
+
+<details><summary>Microsoft Edge</summary>
+<img src="docs/device/edge110.png">
+</details>
+
+Back to [top](#table-of-contents)
+
+## Bugs
+
+| **Bug** | **Fix** |
+| ------- | ------- |
+|  |  |
