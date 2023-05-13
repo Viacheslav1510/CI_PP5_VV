@@ -517,6 +517,15 @@ AWS S3 bucket was chosen to store website static and media data. It's a reliable
 
 ### Database
 
+I built my database using PostgreSQL. It's a powerful and open-source object-relational database system that is known for its reliability, robustness, and performance.
+
+<a href="" target="_blank">Download Schema PDF</a>  
+Schema</a>
+
+<details><summary>See Database Image</summary>
+<img src="docs/db-schema.png">
+</details>
+
 ### Models
 
 User Model
