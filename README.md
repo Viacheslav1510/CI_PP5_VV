@@ -55,6 +55,17 @@
   - [Manual testing](#manual-testing)
   - [Device Testing \& Browser compatibility](#device-testing--browser-compatibility)
 - [Bugs](#bugs)
+- [Deployment](#deployment)
+  - [Heroku](#heroku)
+  - [Stripe Endpoint](#stripe-endpoint)
+  - [AWS S3 Bucket Setup](#aws-s3-bucket-setup)
+  - [Fork Repository](#fork-repository)
+  - [Clone Repository](#clone-repository)
+- [Credits](#credits)
+  - [Code](#code)
+  - [Media](#media)
+- [Acknowledgements](#acknowledgements)
+  - [Special thanks to the following:](#special-thanks-to-the-following)
 
 <hr>
 
@@ -1814,3 +1825,229 @@ Back to [top](#table-of-contents)
 | Contact model can't be open in admin panel, server error  | Install daterangefilter to installed apps in settings |
 | Stripe payment filed doesn't shown on page, shown an error "$ is not a function" in conlose  | Install proper jQuery cdn |
 | 404 page doesn't shown in deploy version  | Set correct Debug settings |
+
+Back to [top](#table-of-contents)
+
+## Deployment 
+
+### Heroku  
+
+[Official Page](https://devcenter.heroku.com/articles/git) (Ctrl + click)
+
+This application has been deployed from Github using Heroku. Here's how:
+
+1. Create an account at heroku.com
+<details><summary>See Images</summary>
+<img src="docs/deployment/heroku-1-1.png">
+</details>
+
+2. Create an app, give it a name for such as ci-pp4-the-diplomat, and select a region
+<details><summary>See Images</summary>
+<img src="docs/deployment/heroku-2-1.png">
+<img src="docs/deployment/heroku-2-2.png">
+</details>
+
+3. Go to app settings and set DATABASE_URL to config vars
+<details><summary>See Images</summary>
+<img src="docs/deployment/heroku-3-1.png">
+</details>
+
+
+4. Install the plugins dj-database-url and psycopg2-binary in terminal.
+
+5. Run pip3 freeze > requirements.txt so both are added to the requirements.txt file
+<details><summary>See Images</summary>
+<img src="docs/deployment/heroku-5-1.png">
+</details>
+
+6. Create a Procfile with the text: web: gunicorn your_app_name.wsgi
+<details><summary>See Images</summary>
+<img src="docs/deployment/heroku-6-1.png">
+</details>
+
+
+7. Ensure debug is set to false in the settings.py file, add localhost, and ci-pp4-the-diplomat.herokuapp.com to the ALLOWED_HOSTS variable in settings.py
+<details><summary>See Images</summary>
+<img src="docs/deployment/heroku-7-1.png">
+</details>
+
+8. In the settings.py ensure the connection is to the Heroku postgres database, no indentation if you are not using a seperate test database. <details><summary>See Images</summary>
+<img src="docs/deployment/heroku-8-1.png">
+</details>
+
+9.  Run "python3 manage.py showmigrations" to check the status of the migrations
+
+10. Run "python3 manage.py migrate" to migrate the database
+
+11. Run "python3 manage.py createsuperuser" to create a super/admin user
+
+12. Run "python3 manage.py loaddata genres.json" on the categories file in products/fixtures to create the genres
+
+13. Run "python3 manage.py loaddata albums.json" on the products file in products/fixtures to create the albums
+
+14. Run "python3 manage.py loaddata tracks.json" on the products file in products/fixtures to create the tracks
+
+15. Install gunicorn (pip install gunicorn) and add it to the requirements.txt file using the command pip3 freeze > requirements.txt
+
+16. Disable collectstatic in Heroku before any code is pushed using the heroku settings config vars: set DISABLE_COLLECTSTATIC: 1
+<details><summary>See Images</summary>
+<img src="docs/deployment/heroku-12-1.png">
+</details>
+
+
+17.  Ensure the following environment variables are set in Heroku
+<details><summary>See Images</summary>
+<img src="docs/deployment/heroku-17.png">
+</details>
+
+18.  Connect the app to GitHub, and enable automatic deploys from main if you wish
+<details>
+<img src="docs/deployment/heroku-18.png">
+<img src="docs/deployment/heroku-18-1.png">
+</details>
+
+19.  Click deploy to deploy your application to Heroku for the first time
+
+20.  Click on the link provided to access the application
+
+21.  If you encounter any issues accessing the build logs is a good way to troubleshoot the issue
+
+### Stripe Endpoint
+
+1. Register for a Stripe account at stripe.com
+2. Log into your Stripe account and navigate to the Developers section  
+<details><summary>See Images</summary>
+<img src="docs/deployment/stripe-1.png">
+</details>  
+
+3. In the Developers section, locate the API keys section and take note of the publishable and secret keys  
+<details><summary>See Images</summary>
+<img src="docs/deployment/stripe-2.png">
+</details> 
+
+4. Create environment variables in your local environment and on Heroku, such as STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY, with the values of the publishable and secret keys  
+<details><summary>See Images</summary>
+<img src="docs/deployment/stripe-4.png">
+</details>
+
+5. Return to the Developers section of your Stripe account and click on the Webhooks tab  
+<details><summary>See Images</summary>
+<img src="docs/deployment/stripe-5.png">
+</details> 
+
+6. Create a webhook with the URL of your website, such as https://example.com/checkout/wh/  
+<details><summary>See Images</summary>
+<img src="docs/deployment/stripe-6-1.png">
+</details> 
+
+7. Choose the events you want to receive, such as payment_intent.payment_failed and payment_intent.succeeded and click add endpoint  
+<details><summary>See Images</summary>
+<img src="docs/deployment/stripe-6-2.png">
+<img src="docs/deployment/stripe-6-3.png">
+</details> 
+
+8. Take note of the key generated for this webhook  
+
+9. Create an environment variable, such as STRIPE_WH_SECRET, with the value of the webhook secret key on your local environment and Heroku  
+<details><summary>See Images</summary>
+<img src="docs/deployment/stripe-9.png">
+</details>
+
+10. Test the webhook to ensure it is working properly and troubleshoot any issues that may arise.  
+<details><summary>See Images</summary>
+<img src="docs/deployment/stripe-7.png">
+</details>
+
+### AWS S3 Bucket Setup  
+
+To set up an AWS S3 bucket:
+
+1. Sign in to the AWS Management Console and open the Amazon S3 console.  
+<details><summary>See Images</summary>
+<img src="docs/deployment/aws-1.png">
+</details>
+
+2. Click on the "Create Bucket" button.  
+<details><summary>See Images</summary>
+<img src="docs/deployment/aws-2.png">
+</details>
+
+3. Enter a unique name for your bucket, and select the region where you want the bucket to be located.
+Configure any additional options, such as versioning, object-level logging, and object tagging, as needed.
+Click on the "Create" button to create the bucket.
+<details><summary>See Images</summary>
+<img src="docs/deployment/aws-3-1.png">
+<img src="docs/deployment/aws-3-2.png">
+</details>
+
+4. Set up the Static website hosting property
+<details><summary>See Images</summary>
+<img src="docs/deployment/aws-4-1.png">
+<img src="docs/deployment/aws-4-2.png">
+</details>
+
+5. Set up the Cross-origin resource sharing (CORS) section and Bucket policy in permissions 
+
+<details><summary>See Images</summary>
+<img src="docs/deployment/aws-5-1.png">
+<img src="docs/deployment/aws-5-2.png">
+<img src="docs/deployment/aws-5-3.png">
+</details>
+
+6. Go to Identify and Access Management (IAM)
+
+6. Create Group
+
+7. Create User
+
+8. Upload your user SECRET_ACCESS_KEY and ACCESS_KEY_ID
+
+9. Set enviroment variables in heroku settings and delete DISABLE_COLLECTSTATIC var
+<details><summary>See Images</summary>
+<img src="docs/deployment/aws-9-1.png">
+</details>
+
+10. Set settings for aws in your app settings:
+<details><summary>See Images</summary>
+<img src="docs/deployment/aws-10.png">
+</details>
+
+11. Upload files to the bucket using the AWS S3 console, the AWS S3 CLI, or the AWS S3 SDK.  
+<details><summary>See Images</summary>
+<img src="docs/deployment/aws-11.png">
+</details>
+
+### Fork Repository
+To fork the repository by following these steps:
+1. Go to the GitHub repository
+2. Click on Fork button in upper right hand corner
+<hr>
+
+### Clone Repository
+You can clone the repository by following these steps:
+1. Go to the GitHub repository 
+2. Locate the Code button above the list of files and click it 
+3. Select if you prefere to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+7.Press Enter to create your local clone.
+
+## Credits
+
+### Code  
+- Code Institute for the search and sorting functionality, bag and checkout app as a basis for my checkout and basket apps
+- Code Institute Tutor support for guidance on many of my bug fixes.
+
+### Media
+
+- www.nme.com for my blog content
+
+Back to [top](#table-of-contents)
+
+## Acknowledgements
+
+### Special thanks to the following:
+- My Mentor Mo Shami for his excellent guidance and valuable advices in development process 
+- Code Institute Slack Community
+- Code Institute Tutor Support
