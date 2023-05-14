@@ -942,7 +942,7 @@ The [W3C Markup Validation Service](https://validator.w3.org/) was used to valid
 
 <details><summary>index.html</summary>
 
-![Home html](docs/validation/html)
+![Home html](docs/validation/html/home.png)
 </details>
 
 - All products page
@@ -1804,4 +1804,13 @@ Back to [top](#table-of-contents)
 
 | **Bug** | **Fix** |
 | ------- | ------- |
-|  |  |
+| Input quantity field can be submitted empty that causes an error  | Write Javascript function and views to set proper quantity after wrong input  |
+| Bag input quantity field can be submitted with invalid input by keypress Enter that causes an error  | Enclose quantity input for adjust bag view in while loop and inside try/except block to provide functionality for proper input, write JS function for sunbmit by Enter press |
+| Add and edit products form give an error after submit | Delete args in appropriate views to redirect to the right path |
+| Stripe webhook doesn't respond to the request  | Set proper webhook path and check webhook handler |
+| Stripe webhook doesn't respond to the request  | Set proper intent metadata and billing details in webhook handler |
+| Stripe webhook doesn't respond to the request  | Set proper intent metadata and billing details in webhook handler |
+| Contact form doesn;t submit  | Register Contact model in admin in correct way |
+| Contact model can't be open in admin panel, server error  | Install daterangefilter to installed apps in settings |
+| Stripe payment filed doesn't shown on page, shown an error "$ is not a function" in conlose  | Install proper jQuery cdn |
+| 404 page doesn't shown in deploy version  | Set correct Debug settings |
