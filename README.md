@@ -53,6 +53,7 @@
   - [PageSpeed Insights](#pagespeed-insights)
 - [Testing](#testing)
   - [Manual testing](#manual-testing)
+  - [Automated testing](#automated-testing)
   - [Device Testing \& Browser compatibility](#device-testing--browser-compatibility)
 - [Bugs](#bugs)
 - [Deployment](#deployment)
@@ -1787,6 +1788,35 @@ Functionality available only for website Admin or Authorised user by Admin
 <img src="docs/testing/manual_testing/test-25-3.png">
 </details>
 
+### Automated testing
+
+Testing was done using the built in Django module, unittest.
+Coverage was also usesd to generate a report
+
+- Bag, test_views.py
+
+<details><summary>See Images</summary>
+<img src="docs/testing/automated/test_bag_views.png">
+</details>
+
+- Checkout, test_views.py
+
+<details><summary>See Images</summary>
+<img src="docs/testing/automated/test_checkout_views.png">
+</details>
+
+- Coverage Bag
+
+<details><summary>See Images</summary>
+<img src="docs/testing/automated/test_coverage_bag.png">
+</details>
+
+- Coverage Checkout
+
+<details><summary>See Images</summary>
+<img src="docs/testing/automated/test_coverage_checkout.png">
+</details>
+
 ### Device Testing & Browser compatibility
 
 The site uses to test on various real world devices was [BrowserStack](https://www.browserstack.com/)
@@ -2036,8 +2066,8 @@ You can clone the repository by following these steps:
 ## Credits
 
 ### Code  
-- Code Institute for the search and sorting functionality, bag and checkout app as a basis for my checkout and basket apps
-- Code Institute Tutor support for guidance on many of my bug fixes.
+- Code Institute for the search and sorting functionality, bag and checkout app as a basis for my checkout and bag apps
+- Code Institute Tutor support for guidance on my bug fixes.
 
 ### Media
 
