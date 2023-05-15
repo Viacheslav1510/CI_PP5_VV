@@ -21,10 +21,23 @@ def add_to_bag(request, item_id):
     A function to add a quantity of the specified product to the shopping bag
     """
     album = get_object_or_404(Album, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
+    while True:
+        try:
+            quantity = int(request.POST.get('quantity'))
+            if quantity < 1:
+                quantity = 1
+                messages.warning(request, "You can't choose less than 1")
+            if quantity > 5:
+                quantity = 5
+                messages.warning(request, "Sorry, \
+                    You can't choose more than 5")
+            break
+        except ValueError:
+            messages.warning(request, "Invalid input")
+            return redirect(redirect_url)
     bag = request.session.get('bag', {})
-    print(bag)
+
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
         messages.success(request, f'Added {album.name} to your bag')
