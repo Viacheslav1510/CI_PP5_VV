@@ -414,6 +414,16 @@ Track Model
 | ForeignKey | album       | Album model         |
 |            | artist      | CharField[100]      |
 
+Review Model
+
+| Key        | Name        | Type                |
+| ---------- | ----------- | --------------      |
+| PrimaryKey | review_id   | AutoField           |
+| ForeignKey | user        | User Model          |
+| ForeignKey | product     | Album model         |
+|            | body        | CharField[200]      |
+|            | date_created| DateTimeField       |
+
 Wishlist Model
 
 | Key        | Name        | Type                |
@@ -615,6 +625,17 @@ I have used meta keywords that make it possible for people to find my site via s
 <details><summary>See feature images</summary>
 
 ![Products details](docs/features/product-details.png)
+</details>
+
+- Reviews
+  - Previos user reviews can be seen on products detail page
+  - Authorized users can leave the reviews
+  - User cand edit or delete their own review
+  - User stories covered: 9
+
+<details><summary>See feature images</summary>
+
+![Reviews](docs/features/reviews.png)
 </details>
 
 - Blog page

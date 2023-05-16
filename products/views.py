@@ -85,14 +85,13 @@ def product_detail(request, product_id):
     wishlist_item = None
     tracks = album.tracks.all()
     reviews = Review.objects.filter(product=album)
+    form = ReviewForm(request.POST)
 
     if user.is_authenticated:
         wishlist_item = Wishlist.objects.filter(
             product=album, user=user).first()
         in_wishlist = Wishlist.objects.filter(
             product=album, user=user).exists()
-
-        form = ReviewForm(request.POST)
 
         if request.method == 'POST':
             form = ReviewForm(request.POST)
