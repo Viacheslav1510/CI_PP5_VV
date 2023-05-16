@@ -7,8 +7,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 # Internal:
-from .models import Album, Genre
-from .forms import AlbumForm
+from .models import Album, Genre, Review
+from .forms import AlbumForm, ReviewForm
 from wishlist.models import Wishlist
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -83,20 +83,84 @@ def product_detail(request, product_id):
     user = request.user
     in_wishlist = False
     wishlist_item = None
+    tracks = album.tracks.all()
+    reviews = Review.objects.filter(product=album)
+
     if user.is_authenticated:
         wishlist_item = Wishlist.objects.filter(
             product=album, user=user).first()
         in_wishlist = Wishlist.objects.filter(
             product=album, user=user).exists()
 
-    tracks = album.tracks.all()
+        form = ReviewForm(request.POST)
+
+        if request.method == 'POST':
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                instance = form.save(commit=False)
+                instance.user = request.user
+                instance.product = album
+                form.save()
+                messages.info(request, "You've left the review successfully")
+                return redirect(reverse('product_detail', args=[product_id]))
+
     context = {
         'album': album,
         'tracks': tracks,
         'in_wishlist': in_wishlist,
         'wishlist_item': wishlist_item,
+        'form': form,
+        'reviews': reviews
     }
     return render(request, 'products/product_detail.html', context)
+
+
+@login_required()
+def edit_review(request, review_id):
+    """Edit a review"""
+
+    review = get_object_or_404(Review, pk=review_id)
+    album = review.product
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, 'Review successfully updated!')
+            return redirect(reverse('product_detail', args=[album.id]))
+        else:
+            messages.error(
+                request, 'Failed to update this review. \
+                    Please ensure the form is valid.')
+    else:
+        form = ReviewForm(instance=review)
+        messages.info(request, 'You are editing your review')
+
+    template = 'products/edit_review.html'
+
+    context = {
+        'form': form,
+        'review': review,
+        'album': album,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_review(request, review_id):
+    """ Delete review from the product details page """
+
+    review = get_object_or_404(Review, pk=review_id)
+    album = review.product
+
+    if request.method == 'POST':
+        review.delete()
+        messages.success(request, 'Your review has been deleted!')
+        return redirect(reverse('product_detail', args=[album.id]))
+
+    return render(request, 'products/delete_review.html')
 
 
 @login_required

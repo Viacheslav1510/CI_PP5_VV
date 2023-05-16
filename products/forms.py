@@ -2,8 +2,9 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:
 from django import forms
+from django.forms import Textarea
 # Internal:
-from .models import Album, Genre
+from .models import Album, Genre, Review
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -26,3 +27,23 @@ class AlbumForm(forms.ModelForm):
 
         super(AlbumForm, self).__init__(*args, **kwargs)
         self.fields['image'].required = True
+
+
+class ReviewForm(forms.ModelForm):
+    """
+    A class to create Review model form
+    """
+    class Meta:
+        model = Review
+        fields = ('body',)
+        widgets = {
+            'body': Textarea(attrs={'cols': 50, 'rows': 5}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        """
+        Remove auto-generated labels
+        """
+        super().__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].label = False

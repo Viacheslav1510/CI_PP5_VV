@@ -3,6 +3,7 @@
 # 3rd party:
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from django.contrib.auth.models import User
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -84,3 +85,26 @@ class Track(models.Model):
 
     def __str__(self):
         return f'Album: {self.album}, Track: {self.name}'
+
+
+class Review(models.Model):
+    """
+    A class to create Reviews
+    """
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='reviews',
+    )
+    product = models.ForeignKey(
+        Album,
+        on_delete=models.CASCADE,
+        related_name='reviews')
+    body = models.CharField(blank=True, max_length=200)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-date_created',)
+
+    def __str__(self):
+        return f'Comment {self.body} by {self.user.username}'

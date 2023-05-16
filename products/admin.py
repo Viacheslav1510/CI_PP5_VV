@@ -4,7 +4,7 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 # Internal:
-from .models import Album, Genre, Track
+from .models import Album, Genre, Track, Review
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -44,6 +44,17 @@ class TrackAdmin(admin.ModelAdmin):
     )
 
 
+class ReviewAdmin(admin.ModelAdmin):
+    """Admin Panel display for Product Model"""
+    list_display = (
+        'product',
+        'user',
+        'body',
+        'date_created'
+    )
+
+
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Genre, GenreAdmin)
 admin.site.register(Track, TrackAdmin)
+admin.site.register(Review, ReviewAdmin)

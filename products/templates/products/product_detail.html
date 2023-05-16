@@ -97,6 +97,48 @@
                      </ul>
                 </div>
                 {% endif %}
+                {% if user.is_authenticated %}
+                <div class="mt-5">
+                    <form method="POST" action="{% url 'product_detail' album.id %}">
+                        <p class="ml-2">You can leave your review for this album:</p>
+                        <label for="id_body">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input type="submit" class="btn btn-success btn-sm" value="Send">
+                    </form>
+                </div>
+                {% else %}
+                <div class="my-3">
+                    Login to leave a review <a href="{% url 'account_login' %}" class="icon">Here.</a>
+                </div>
+                {% endif %}
+                <p>
+                    <a data-toggle="collapse" href="#collapseReviews" role="button" 
+                    aria-expanded="false" aria-controls="collapseReviews" class="btn btn-outline-dark btn-sm mt-2">
+                        See Reviews
+                    </a>
+                </p>
+                <div class="collapse" id="collapseReviews">
+                    <div class="card card-body Reviews-card">
+                    {% if reviews %}
+                        {% for review in reviews %}
+                        <p class="review-username">{{ review.user }}<span class="text-muted">, {{ review.date_created }}</span></p>
+                        <p class="text-black">
+                            {{ review.body }}
+                        </p>
+                        {% if review.user == request.user %}
+                        <div class="d-flex justify-content-end">
+                            <a href="{% url 'edit_review' review.id %}" class="text-primary mr-2">Edit</a>
+                            <a href="{% url 'delete_review' review.id %}" class="text-danger">Delete</a>
+                        </div>
+                        {% endif %}
+                        <hr class="review-body-hr">
+                        {% endfor %}
+                    {% else %}
+                        This album has no reviews...
+                    {% endif %}
+                    </div>
+                </div> 
         </div>
     </div>
 </div>
