@@ -1147,7 +1147,7 @@ Back to [top](#table-of-contents)
   </details>
 
   <details><summary>views.py</summary>
-  <img src="docs/validation/pep8/products-views.png">
+  <img src="docs/validation/pep8/product_views.png">
   </details>
 
 <hr>
@@ -1410,7 +1410,22 @@ Back to [top](#table-of-contents)<hr>
 
 9.  As a Shopper / Site User I can be interested in previous shopper experience so that I can choose a product according to the best reviews.
 
-Doesn't implemented.
+| Feature | Action | Expected Result | Actual Result |
+| ------- | ------ | --------------- | ------------- |
+| Products details | Scroll down to reviews section | User can see reviews | Works as expected  |
+| Products details | Login to leave the review | User can add a review | Works as expected  |
+| Reviews | Click edit on your review | User can update their review | Works as expected  |
+| Reviews | Click delete on your review | User can delete a review after confirmation | Works as expected  |
+
+<details><summary>See Images</summary>
+<img src="docs/testing/manual_testing/test-9-1.png">
+<img src="docs/testing/manual_testing/test-9-2.png">
+<img src="docs/testing/manual_testing/test-9-3.png">
+<img src="docs/testing/manual_testing/test-9-4.png">
+<img src="docs/testing/manual_testing/test-9-5.png">
+<img src="docs/testing/manual_testing/test-9-6.png">
+<img src="docs/testing/manual_testing/test-9-7.png">
+</details> 
 
 10. As a Shopper / Site User I can add products to bag so that I can review my items before I buy them.
 
