@@ -953,30 +953,37 @@ Back to [top](#table-of-contents)
 The [W3C Jigsaw CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to validate the CSS of the website.
 
 <details><summary>base.css</summary>
+
 <img src="docs/validation/css/base.png">
 </details> 
 
 <details><summary>blog.css</summary>
+
 <img src="docs/validation/css/blog.png">
 </details> 
 
 <details><summary>bag.css</summary>
+
 <img src="docs/validation/css/bag.png">
 </details
 
 <details><summary>checkout.css</summary>
+
 <img src="docs/validation/css/checkout.png">
 </details
 
 <details><summary>contact.css</summary>
+
 <img src="docs/validation/css/contact.png">
 </details
 
 <details><summary>products.css</summary>
+
 <img src="docs/validation/css/products.png">
 </details
 
 <details><summary>profiles.css</summary>
+
 <img src="docs/validation/css/profiles.png">
 </details
 
@@ -1749,7 +1756,10 @@ This application has been deployed from Github using Heroku. Here's how:
 <img src="docs/deployment/heroku-7-1.png">
 </details>
 
-8. In the settings.py ensure the connection is to the Heroku postgres database, no indentation if you are not using a seperate test database. <details><summary>See Images</summary>
+8. In the settings.py ensure the connection is to the Heroku postgres database, no indentation if you are not using a seperate test database.
+
+<details><summary>See Images</summary> 
+
 <img src="docs/deployment/heroku-8-1.png">
 </details>
 
