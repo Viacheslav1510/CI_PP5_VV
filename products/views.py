@@ -121,8 +121,12 @@ def edit_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
     album = review.product
 
+    if request.user != review.user:
+        messages.error(request, 'No no no! I knew that you could do it!')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
-        form = ReviewForm(request.POST, instance=review)
+        form = ReviewForm(request.POST, instance=review, user=request.user)
         if form.is_valid():
             form.save()
             messages.success(
@@ -150,6 +154,9 @@ def edit_review(request, review_id):
 @login_required
 def delete_review(request, review_id):
     """ Delete review from the product details page """
+    if request.user != review.user:
+        messages.error(request, 'No no no! I knew that you could do it!')
+        return redirect(reverse('home'))
 
     review = get_object_or_404(Review, pk=review_id)
     album = review.product
