@@ -154,12 +154,12 @@ def edit_review(request, review_id):
 @login_required
 def delete_review(request, review_id):
     """ Delete review from the product details page """
+    review = get_object_or_404(Review, pk=review_id)
+    album = review.product
+
     if request.user != review.user:
         messages.error(request, 'No no no! I knew that you could do it!')
         return redirect(reverse('home'))
-
-    review = get_object_or_404(Review, pk=review_id)
-    album = review.product
 
     if request.method == 'POST':
         review.delete()
